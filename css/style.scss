@@ -602,22 +602,39 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
     font-family: "Roboto Slab";
+    
   }
 
+  .model-content h1 
+  {
+    font-size: 40px;
+  }
+
+  .model-content h3 
+  {
+    font-size: 15px;
+  }
 
 
   .model-content > span
   {
     background: #000;
-    width: 100px;
+    width: 80px;
     height: 3px;
   }
 
   .model-content > p
   {
+    width: 600px;
+    margin-top: 0.8rem;
+    display: -webkit-box;
+    font-size: 14px;
     text-align: center;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   /* CONTACT FORM */
