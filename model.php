@@ -13,10 +13,14 @@
         
     </p>
     <div class="gallery-annexes-content">
-        <img src="" alt="">
-        <img src="" alt="">
+        <img src="images/annexes/neon_body/image_1.jpg" alt="">
+        <img src="images/annexes/neon_body/image_2.jpg" alt="">
+        <img src="images/annexes/neon_body/image_3.jpg" alt="">
     </div>
     </div>
     
 </body>
+<?php
+    include('includes/footer.php');
+?>
 </html>

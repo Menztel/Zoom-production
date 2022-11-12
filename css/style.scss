@@ -637,6 +637,32 @@
     overflow: hidden;
   }
 
+  .model-content .gallery-annexes-content
+  {
+    margin-top: 1rem;
+    padding: 50px;
+    display: flex;
+    gap: 3rem;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 24px;
+  }
+
+  .gallery-annexes-content > img 
+  {
+    width: 250px;
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+    -moz-box-shadow: rgba(0,0,0,0.3) 0 1px 3px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+  }
+
+  .gallery-annexes-content > img:nth-child(3)
+  {
+    margin-left: 5px;
+  }
+
   /* CONTACT FORM */
 
   section
