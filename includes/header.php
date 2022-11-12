@@ -6,7 +6,7 @@
 
 
     
-            <button class="dropbtn">Dropdown <img id="arrow" src="images/icons/right_chevron.png" alt="right chevron"></button>
+            <button class="dropbtn">Projets <img id="arrow" src="images/icons/right_chevron.png" alt="right chevron"></button>
             
 
             <li class="dropdown-content"><a href="branding_page.php">Identitée visuelle</a></li>
