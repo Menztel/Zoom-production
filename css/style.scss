@@ -62,9 +62,16 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      line-height: 30px;
       background: rgb(255, 255, 255);
       transition: top 1s ease 0s;
       display: none;
+    }
+
+    .mainMenu .icons:last-child
+    {
+      position: relative;
+      align-items: flex-end;
     }
     
     /*.fa-bars {
@@ -73,6 +80,20 @@
 
     /*  Header dropdown menu  */
 
+    #dropMenu
+    {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #drop
+    {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
     /* Dropdown Button */
     .dropbtn {
       background-color: #000;
@@ -122,13 +143,10 @@
     }
 
 
-   
-
-    .mainMenu > li
+    .mainMenu > li:nth-child(3)
     {
-      
+      margin-top: 1rem;
     }
-
 
     .mainMenu li a {
       display: inline-block;
@@ -136,7 +154,7 @@
       font-family: "Roboto Slab";
       text-decoration: none;
       color: rgb(0, 0, 0);
-      font-size: 22px;
+      font-size: 23px;
       transition: 0.35s;
     }
     .mainMenu li a:hover {
@@ -755,14 +773,16 @@
 
   .contact-container .contactInfo .info li span:nth-child(1)
   {
-    width: 30px;
-    min-width: 30px;
+  
   }
 
 
   .contact-container .contactInfo .info li span:nth-child(1) img
   {
     max-width: 30px;
+    min-width: 30px;
+    min-height: 30px;
+    max-height: 30px;
   }
 
   .contact-container .contactInfo .info li span:nth-child(2)

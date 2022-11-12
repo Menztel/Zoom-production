@@ -33,21 +33,27 @@ function close(){
 toggle between hiding and showing the dropdown content */
 
 const arrow = document.getElementById("arrow");
+const dropMenu = document.getElementById("dropMenu");
+const drop = document.getElementById("drop");
 const button = document.getElementsByClassName("dropbtn");
-button[0].addEventListener('click', function(){
+dropMenu.addEventListener('mouseover', function(){
     button[0].style.transform = "translateY(-10px)";
     arrow.style.transform = "rotate(90deg)";
+    drop.style.lineHeight = "1em";
     const li = document.getElementsByClassName("dropdown-content");
+    const a = document.getElementsByClassName("link-content");
     let i;
     for(i = 0; i < li.length; i++){
         console.log(li[i]);
         li[i].classList.toggle("show");
+        a[i].style.fontSize = "16px";
 };
 });
 
 
 // Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
+dropMenu.addEventListener('mouseout', function(event){
+    
     if (!event.target.matches('.dropbtn')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
@@ -60,7 +66,8 @@ window.onclick = function(event) {
         }
     }
     }
-}
+    
+});
 
 
 
