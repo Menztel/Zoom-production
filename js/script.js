@@ -26,6 +26,45 @@ function close(){
 
 
 
+
+/// Header Dropdown Menu
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+
+const arrow = document.getElementById("arrow");
+const button = document.getElementsByClassName("dropbtn");
+button[0].addEventListener('click', function(){
+    button[0].style.transform = "translateY(-10px)";
+    arrow.style.transform = "rotate(90deg)";
+    const li = document.getElementsByClassName("dropdown-content");
+    let i;
+    for(i = 0; i < li.length; i++){
+        console.log(li[i]);
+        li[i].classList.toggle("show");
+};
+});
+
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+        button[0].style.transform = "translateY(0)";
+        arrow.style.transform = "rotate(0deg)";
+        }
+    }
+    }
+}
+
+
+
+
 /// Show the addForm
 
 function showForm() {
