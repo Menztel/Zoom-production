@@ -93,9 +93,9 @@
     #right_chevron
     {
       position: absolute;
-      margin-top: 2.5rem;
+      margin-top: 2.7rem;
       rotate: 90deg;
-      animation: infinitLoop 3s infinite alternate; // alternate permet le retour de l'animation
+      animation: infinitLoop 2.5s infinite alternate; // alternate permet le retour de l'animation
     }
 
 
@@ -103,6 +103,7 @@
     {
       from {
         transform: scale(1) translateX(0);
+        rotate: 270deg;
       }
 
       to {
@@ -114,8 +115,20 @@
     {
       margin-top: 0;
       position: none;
-      transform: translateX(-5px);
-      animation: none;
+      rotate: 270deg;
+      transform: translateY(-5px);
+      animation: rotateChevron 0.35s;
+    }
+
+    @keyframes rotateChevron
+    {
+      from {
+        rotate: 0deg; 
+      }
+
+      to {
+        rotate: 270deg;
+      }
     }
 
 
