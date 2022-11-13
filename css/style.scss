@@ -68,7 +68,7 @@
       display: none;
     }
 
-    .mainMenu .icons:last-child
+    .mainMenu .icons
     {
       position: relative;
       align-items: flex-end;
@@ -116,7 +116,7 @@
       margin-top: 0;
       position: none;
       rotate: 270deg;
-      transform: translateY(-5px);
+      transform: translateX(5px);
       animation: rotateChevron 0.35s;
     }
 
@@ -139,7 +139,7 @@
       background: none;
       text-align: center;
       font-family: "Roboto Slab";
-      font-size: 23px;
+      font-size: 2em;
       border: none;
       cursor: pointer;
       transition: 0.35s ease-in;
@@ -218,7 +218,16 @@
       animation: fadein 0.5s ease-in;
     }
 
-    .link-content{}
+    .link-content
+    {
+      display: inline-block;
+      padding: 10px;
+      font-family: "Roboto Slab";
+      font-size: 1.5em;
+      text-decoration: none;
+      color: rgb(0, 0, 0);
+      transition: 0.35s;
+    }
 
     .link-content:hover
     {
@@ -249,13 +258,13 @@
       margin-top: 1rem;
     }
 
-    .mainMenu li a {
+    .mainMenu > li a {
       display: inline-block;
       padding: 10px;
       font-family: "Roboto Slab";
       text-decoration: none;
       color: rgb(0, 0, 0);
-      font-size: 23px;
+      font-size: 2em;
       transition: 0.35s;
     }
     .mainMenu li a:hover {
@@ -291,11 +300,20 @@
       transform: scale(1.3) translateY(5px);
     }
   
-    .mainMenu .closeMenu,
-    .icons {
+    .mainMenu .closeMenu 
+    {
       display: flex;
       justify-content: center;
       margin-top: 1.5rem;
+    }
+
+    .mainMenu .icons
+    {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.5rem;
     }
 
     .mainMenu .closeMenu,
