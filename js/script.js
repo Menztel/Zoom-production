@@ -36,8 +36,9 @@ const arrow = document.getElementById("arrow");
 const dropMenu = document.getElementById("dropMenu");
 const drop = document.getElementById("drop");
 const button = document.getElementsByClassName("dropbtn");
-dropMenu.addEventListener('mouseover', function(){
+/*dropMenu.addEventListener('mouseover', function(){
     button[0].style.transform = "translateY(-10px)";
+    dropMenu.style.transform = "translateY(-10px)";
     arrow.style.transform = "rotate(90deg)";
     drop.style.lineHeight = "1em";
     const li = document.getElementsByClassName("dropdown-content");
@@ -46,7 +47,7 @@ dropMenu.addEventListener('mouseover', function(){
     for(i = 0; i < li.length; i++){
         console.log(li[i]);
         li[i].classList.toggle("show");
-        a[i].style.fontSize = "16px";
+        a[i].style.fontSize = "18px";
 };
 });
 
@@ -61,13 +62,15 @@ dropMenu.addEventListener('mouseout', function(event){
         var openDropdown = dropdowns[i];
         if (openDropdown.classList.contains('show')) {
         openDropdown.classList.remove('show');
-        button[0].style.transform = "translateY(0)";
+        button[0].style.transform = "translateY(0px)";
+        dropMenu.style.transform = "translateY(0px)";
         arrow.style.transform = "rotate(0deg)";
         }
     }
     }
     
 });
+*/
 
 
 

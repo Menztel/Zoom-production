@@ -5,10 +5,11 @@
             <ul class="mainMenu">
 
 
-            <div id="dropMenu">
-            <button class="dropbtn">Projets <img id="arrow" src="images/icons/right_chevron.png" alt="right chevron"></button>
-            
             <div id="drop">
+
+            <p class="dropbtn">Projets</p>
+            <img id="right_chevron" src="images/icons/right_chevron.png" alt="right chevron">
+            <div class="drop_menu">
             <li class="dropdown-content"><a class="link-content" href="branding_page.php">Identitée visuelle</a></li>
             <li class="dropdown-content"><a class="link-content" href="photographie_page.php">Photographie</a></li>
             <li class="dropdown-content"><a class="link-content" href="motion_design_page.php">Motion design</a></li>

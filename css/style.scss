@@ -80,50 +80,138 @@
 
     /*  Header dropdown menu  */
 
-    #dropMenu
-    {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
 
     #drop
     {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 1rem;
+      transition: all 1s;
     }
+
+    #right_chevron
+    {
+      position: absolute;
+      margin-top: 2.5rem;
+      rotate: 90deg;
+      animation: infinitLoop 3s infinite alternate; // alternate permet le retour de l'animation
+    }
+
+
+    @keyframes infinitLoop
+    {
+      from {
+        transform: scale(1) translateX(0);
+      }
+
+      to {
+        transform: scale(1.2) translateX(5px);
+      }
+    }
+
+    #drop:hover #right_chevron
+    {
+      margin-top: 0;
+      position: none;
+      transform: translateX(-5px);
+      animation: none;
+    }
+
+
     /* Dropdown Button */
-    .dropbtn {
-      background-color: #000;
-      color: white;
+    #drop .dropbtn {
       padding: 16px;
-      font-size: 16px;
+      border: none;
+      background: none;
+      text-align: center;
+      font-family: "Roboto Slab";
+      font-size: 23px;
       border: none;
       cursor: pointer;
-      transition: all 0.5s;
+      transition: 0.35s ease-in;
     }
-
-    #arrow 
-    {
-      filter: invert(100);
-      transition: all 0.5s;
-    }
-
-    /* Dropdown button on hover & focus */
-    .dropbtn:hover, .dropbtn:focus {
-      background-color: #2980B9;
-    }
-
-    /* The container <div> - needed to position the dropdown content */
 
     
-    /* Dropdown Content (Hidden by Default) */
-    .dropdown-content {
+    #drop:hover .dropbtn
+    {
+      transform: translateY(-10px) scale(1.2);
+    }
+
+    #drop .drop_menu
+    {
       display: none;
       z-index: 1;
     }
+
+    #drop:hover .drop_menu
+    {
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      
+    }
+
+
+    @keyframes fadein
+    {
+      from {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+
+      50% {
+        
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .dropdown-content
+    {
+      filter: invert(20%);
+    }
+
+    .dropdown-content:nth-child(1)
+    {
+      animation: fadein 0.5s ease-in;
+    }
+
+    .dropdown-content:nth-child(2)
+    {
+      animation: fadein 0.5s ease-in;
+    }
+
+    .dropdown-content:nth-child(3)
+    {
+      animation: fadein 0.5s ease-in;
+    }
+
+    .dropdown-content:nth-child(4)
+    {
+      animation: fadein 0.5s ease-in;
+    }
+
+    .dropdown-content:nth-child(5)
+    {
+      animation: fadein 0.5s ease-in;
+    }
+
+    .dropdown-content:nth-child(6)
+    {
+      animation: fadein 0.5s ease-in;
+    }
+
+    .link-content{}
+
+    .link-content:hover
+    {
+      margin: 0px 10px;
+    }
+
 
     /* Links inside the dropdown */
     .dropdown-content a {
