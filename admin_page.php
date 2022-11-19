@@ -58,35 +58,10 @@
                         Un formulaire te sera présenté pour chaque action, remplis-le et laisse la magie de l'informatique opérer ;)
                     </p>
                 </div>
+
                 
                 </div>
-        <!--<div id="admin_background">
-            <<P>Page admin</p>
-            <div class="addBox">
-                <button onclick="showForm()" class="addButton">+</button>
-                <div id="formDiv">
-                    <button onclick="removeForm()" id="removeForm">X</button>
-                    <form id="addForm" method="POST" action="project_integration/create_project.php" enctype="multipart/form-data">
-                        <div id="file-input">
-                            <input type="file" id="file" name="project-image">
-                            <label for="file">Choisir votre image</label>
-                        </div>
-                            <select id="addForm-page-name" class="addForm-select" name="page-name-project">
-                                <option value="Branding">Branding</option>
-                                <option value="Photographie">Photographie</option>
-                                <option value="Motion design">Motion design</option>
-                                <option value="Illustration">Illustration</option>
-                                <option value="Edition">Edition</option>
-                                <option value="Evenementiel">Evenementiel</option>
-                            </select>
-                            <input type="text" id="addForm-title" class="addForm-input" name="title-project" placeholder="Ajouter le titre du projet">
-                            <button type="submit" id="addForm-button" name="addForm-button">Enregistrer</button>
-                    </form>
-                </div>
-            </div>
-           
-        </div>-->
-
+        
         <script src="js/script.js"></script>
         </div>
 
