@@ -6,7 +6,6 @@
 <!DOCTYPE html>
 
 <html>
-    <p>Test branch</p>
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +15,7 @@
     </head>
 
     <body> 
-    <button type="button" class="burger" onclick="toggleSidebar()">
+    <!--<button type="button" class="burger" onclick="toggleSidebar()">
         <img class="burger-avatar" src="./assets/avatar.png" />
         <span class="burger-icon"></span>
     </button>
@@ -48,14 +47,14 @@
                 </a>
             </button>
         </nav>
-    </aside>
+    </aside>-->
 
     <div class="logo"><a href="index.php"><img src="logo_zoom.svg" alt="logo_Zoom"></a></div>
 
     <div class="glassmorph-dashboard">
         <div class="contact-container">
             <div class="circle-profil">
-                <img src="" alt="">
+                <img src="./assets/avatar.png" alt="profil picture">
             </div>
             <div class="profil-container">
                 <p id="name">Lavisse Zoé</p>
@@ -63,25 +62,36 @@
             </div>
             <div class="link-container">
                 <a href="">
-                    <img src="" alt="Add">
-                    <p>Ajouter un projet</p>
+                    <img src="images/icons/add-icon.png" alt="Add">
+                    <p>Ajouter</p>
                 </a>
                 <a href="">
-                    <img src="" alt="Modif">
-                    <p>Modifier un projet</p>
+                    <img src="images/icons/modif-icon.png" alt="Modif">
+                    <p>Modifier</p>
                 </a>
                 <a href="">
-                    <img src="" alt="Delete">
-                    <p>Supprimer un projet</p>
+                    <img src="images/icons/delete-icon.png" alt="Delete">
+                    <p>Supprimer</p>
                 </a>
+                <a href="includes/deconnexion.php">
+                    <img src="images/icons/logout-icon.png" alt="">
+                    <p>Déconnexion</p>
+                </a>
+
             </div>
-            <div class="social-container"></div>
         </div>
         <div class="text-container">
-            <h1>Bonjour Zoé</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, voluptate illum provident in quas hic laudantium sint quidem, tenetur debitis quisquam quasi dicta libero, optio quam animi. Magnam, officia laboriosam!</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam ipsum animi necessitatibus saepe illo. Atque quas aut optio eligendi, nesciunt, in vitae adipisci quidem officia voluptas molestiae ullam culpa similique.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio nesciunt itaque numquam ex, laborum quibusdam sit? Porro magni ad autem quas velit sit omnis culpa accusamus, dolorum impedit laboriosam reiciendis!</p>
+            <h1>Bonjour Zoé !</h1>
+            <p>Bienvenue sur ton panneau administrateur.<br>
+                D'ici tu pourras gérer l'intégration, la modification et la suppression des différents projets.
+            </p>
+            <p>
+                Il te suffit de cliquer sur ajouter, modifier ou supprimer pour pouvoir le faire.<br>Rien de plus simple !
+            </p>
+            <p>
+                Un formulaire te sera présenté pour chaque action.<br>
+                Remplis-le et laisse la magie de l'informatique opérer ;)
+            </p>
         </div>
         
         </div>
