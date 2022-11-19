@@ -55,8 +55,7 @@
                         Il te suffit de cliquer sur ajouter, modifier ou supprimer pour pouvoir le faire.<br>Rien de plus simple !
                     </p>
                     <p>
-                        Un formulaire te sera présenté pour chaque action.<br>
-                        Remplis-le et laisse la magie de l'informatique opérer ;)
+                        Un formulaire te sera présenté pour chaque action, remplis-le et laisse la magie de l'informatique opérer ;)
                     </p>
                 </div>
                 
