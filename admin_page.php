@@ -43,6 +43,39 @@
             <button type="button">
                 <img src="./assets/logout.png" />
                 <a href="includes/deconnexion.php">
+
+                <div class="glassmorph-dashboard">
+                    <div class="contact-container">
+                        <div class="circle-profil">
+                            <img src="" alt="">
+                        </div>
+                        <div class="profil-container">
+                            <p id="name">Lavisse Zoé</p>
+                            <p id="job">Graphiste</p>
+                        </div>
+                        <div class="link-container">
+                            <a href="">
+                                <img src="" alt="Add">
+                                <p>Ajouter un projet</p>
+                            </a>
+                            <a href="">
+                                <img src="" alt="Modif">
+                                <p>Modifier un projet</p>
+                            </a>
+                            <a href="">
+                                <img src="" alt="Delete">
+                                <p>Supprimer un projet</p>
+                            </a>
+                        </div>
+                        <div class="social-container"></div>
+                    </div>
+                    <div class="text-container">
+                        <h1>Bonjour Zoé</h1>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, voluptate illum provident in quas hic laudantium sint quidem, tenetur debitis quisquam quasi dicta libero, optio quam animi. Magnam, officia laboriosam!</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam ipsum animi necessitatibus saepe illo. Atque quas aut optio eligendi, nesciunt, in vitae adipisci quidem officia voluptas molestiae ullam culpa similique.</p>
+                        <p>lore</p>
+                    </div>
+                </div>
                     <span>Déconnexion</span>
                 </a>
             </button>
