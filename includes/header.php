@@ -10,12 +10,11 @@
             <p class="dropbtn">Projets</p>
             <!--<img id="right_chevron" src="images/icons/right_chevron.png" alt="right chevron">-->
             <div class="drop_menu">
+            <li class="dropdown-content"><a class="link-content" href="branding_page.php">Identitée visuelle</a></li>
             <li class="dropdown-content"><a class="link-content" href="motion_design_page.php">Motion design</a></li>
             <li class="dropdown-content"><a class="link-content" href="photographie_page.php">Photographie</a></li>
-            <li class="dropdown-content"><a class="link-content" href="evenementiel_page.php">Évènementiel</a></li>
-            <li class="dropdown-content"><a class="link-content" href="illustration_page.php">Illustration</a></li>
             <li class="dropdown-content"><a class="link-content" href="edition_page.php">Édition</a></li>
-            <li class="dropdown-content"><a class="link-content" href="branding_page.php">Identitée visuelle</a></li>
+            <li class="dropdown-content"><a class="link-content" href="evenementiel_page.php">Évènementiel</a></li>
             </div>
             </div>
 
