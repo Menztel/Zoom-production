@@ -17,7 +17,7 @@
         <div class="main-content" id="admin-content">
 
 
-            <div class="glassmorph-dashboard">
+            <!--<div class="glassmorph-dashboard">
                 <div class="profil-container">
                     <div class="circle-profil">
                         <img src="./assets/avatar.png" alt="profil picture">
@@ -60,14 +60,41 @@
                 </div>
 
                 
+                </div>-->
+
+                <div class="add-project">
+
+                    <form action="">
+
+                        <div class="name-project">
+                            <input id="project-title" type="text" name="project-title">
+                            <label for="project-title">Nom du projet</label>
+                            <select name="project-name" id="">
+                                <option value="Branding">Branding</option>
+                                <option value="Photographie">Photographie</option>
+                                <option value="Motion design">Motion design</option>
+                                <option value="Illustration">Illustration</option>
+                                <option value="Edition">Edition</option>
+                                <option value="Evenementiel">Evenementiel</option>
+                            </select>
+                        </div>
+
+                        <div class="input-images">
+                        <input type="file" name="project-image" title=" ">
+                        <input type="file" name="project-annexe-images" title=" ">
+                        </div>
+
+                        <textarea name="text-annexe" id="" cols="30" rows="5"></textarea>
+                    </form>
+                    
                 </div>
         
-        <script src="js/script.js"></script>
+        <script src="js/script.js"></script>    
         </div>
 
         <?php
             include('includes/footer.php');
         ?>
-    </body>
+     </body>
 
 </html>

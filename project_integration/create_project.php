@@ -75,7 +75,7 @@ include('../includes/bdd.php');
             $statement = $bdd->prepare($q);
             if($statement !== false) {
                 $result = $statement->execute([
-                                                'title' => $_POST['title-project'],
+                                                'title' => $_POST['project-title'],
                                                 'image' => isset($fileName) ? $fileName : '',
                                                 'page_name' => $_POST['page-name-project'] 
                 ]);

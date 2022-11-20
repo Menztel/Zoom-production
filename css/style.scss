@@ -931,9 +931,9 @@
 
   .body-gradient 
   {
-    background: #DAE2F8;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #D6A4A4, #DAE2F8);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #D6A4A4, #DAE2F8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 
   #admin-content
@@ -950,11 +950,11 @@
     width: 900px;
     display: flex;
     justify-content: center;
-    backdrop-filter: blur(6px) saturate(200%);
-    -webkit-backdrop-filter: blur(6px) saturate(200%);
-    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.6);
     border-radius: 12px;
-    border: 1px solid rgba(209, 213, 219, 0.3);
+    border: 1px solid rgb(112, 112, 112, 0.3);
   }
 
 
@@ -966,12 +966,12 @@
     flex-direction: column;
     align-items: center;
     padding: 1.5rem;
-    backdrop-filter: blur(11px) saturate(200%);
-    -webkit-backdrop-filter: blur(11px) saturate(200%);
-    background-color: rgba(255, 255, 255, 0.81);
+    backdrop-filter: blur(25px) saturate(200%);
+    -webkit-backdrop-filter: blur(25px) saturate(200%);
+    background-color: rgba(255, 255, 255, 1);
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
-    border: 1px solid rgba(209, 213, 219, 0.3);
+    border: 1px solid rgb(112, 112, 112, 0.3);
   }
 
   .profil-container .circle-profil
@@ -1080,4 +1080,40 @@
 .text-container :nth-child(2)
 {
   margin-top: 2rem;
+}
+
+
+
+/*  ADD PROJECT FORM  */
+
+.add-project
+{
+  border: 1px solid;
+}
+
+.add-project > form
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+
+.add-project > form .name-project
+{
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.add-project > form .name-project > input
+{
+  width: 150px;
+}
+
+.add-project .input-images
+{
+  display: flex;
+  justify-content: center;
 }
