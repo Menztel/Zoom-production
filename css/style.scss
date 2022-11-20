@@ -169,7 +169,8 @@
   .main-content {
     min-height: calc(100vh - 150px - 125px);
     width: 100%;
-    margin: 3rem 0;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
   }
   
 
@@ -414,8 +415,34 @@
       background: #aaa;
     }
     
- 
-  
+    #main-photographie
+    {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    #main-photographie .page-title
+    {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    
+    #main-photographie .page-title > h1
+    {
+      font-family: "Roboto Slab";
+      font-size: 2em;
+    }
+    
+    
+    #main-photographie .page-title > span
+    {
+      height: 6px;
+      width: 200px;
+      background-color: #000;
+    }
   
   /* FOOTER */
   

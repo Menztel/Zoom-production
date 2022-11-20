@@ -9,6 +9,11 @@
     include('includes/header.php');
   ?>
     <div id="main-photographie" class="main-content">
+      <div class="page-title">
+        <h1>Photographie</h1>
+        <span></span>
+      </div>
+      
       <div id="cards-photographie" class="cards">
         <?php
 
