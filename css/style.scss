@@ -91,13 +91,13 @@
       transition: all 1s;
     }
 
-    #right_chevron
+    /*#right_chevron
     {
       position: absolute;
       margin-top: 2.7rem;
       rotate: 90deg;
       animation: infinitLoop 2.5s infinite alternate; // alternate permet le retour de l'animation
-    }
+    }*/
 
 
     @keyframes infinitLoop
@@ -111,7 +111,7 @@
       }
     }
 
-    #drop:hover #right_chevron
+    /*#drop:hover #right_chevron
     {
       margin-top: 0;
       position: none;
@@ -129,8 +129,7 @@
       to {
         rotate: 270deg;
       }
-    }
-
+    }*/
 
     /* Dropdown Button */
     #drop .dropbtn {
@@ -187,37 +186,9 @@
     .dropdown-content
     {
       filter: invert(20%);
-    }
-
-    .dropdown-content:nth-child(1)
-    {
       animation: fadein 0.5s ease-in;
     }
 
-    .dropdown-content:nth-child(2)
-    {
-      animation: fadein 0.5s ease-in;
-    }
-
-    .dropdown-content:nth-child(3)
-    {
-      animation: fadein 0.5s ease-in;
-    }
-
-    .dropdown-content:nth-child(4)
-    {
-      animation: fadein 0.5s ease-in;
-    }
-
-    .dropdown-content:nth-child(5)
-    {
-      animation: fadein 0.5s ease-in;
-    }
-
-    .dropdown-content:nth-child(6)
-    {
-      animation: fadein 0.5s ease-in;
-    }
 
     .link-content
     {
@@ -357,6 +328,17 @@
       cursor: pointer;
     }
 
+    .inverse > a
+    {
+      height: 60px;
+      width: 60px;
+      filter: invert(100);
+    }
+
+    .inverse > a > img
+    {
+      border-radius: 50%;
+    }
 
     .logo {
       position: absolute;

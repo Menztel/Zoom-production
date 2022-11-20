@@ -8,7 +8,7 @@
             <div id="drop">
 
             <p class="dropbtn">Projets</p>
-            <img id="right_chevron" src="images/icons/right_chevron.png" alt="right chevron">
+            <!--<img id="right_chevron" src="images/icons/right_chevron.png" alt="right chevron">-->
             <div class="drop_menu">
             <li class="dropdown-content"><a class="link-content" href="motion_design_page.php">Motion design</a></li>
             <li class="dropdown-content"><a class="link-content" href="photographie_page.php">Photographie</a></li>
@@ -30,7 +30,7 @@
             ?>
             
             <div class="closeMenu"><i class="fa fa-times"></i></div>
-            <span class="icons">
+            <span class="icons inverse">
                     <a href="https://www.facebook.com/zoom.production.tahiti"><img src="images/icons/facebook.svg" alt="facebook_logo"></a>
                     <a href="https://www.instagram.com/zoom.production.tahiti"><img src="images/icons/instagram.svg" alt="instagram_logo"></a>
                     <a href="https://www.linkedin.com/company/zoom-production-tahiti"><img src="images/icons/linkedin.svg" alt="linkedin_logo"></a>
