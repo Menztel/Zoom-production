@@ -434,7 +434,7 @@
   {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
   }
 
   .foot-icons > li
@@ -447,8 +447,8 @@
 
   .foot-icons li a > img
   {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     filter: invert(100);
     transition: 0.5s;
