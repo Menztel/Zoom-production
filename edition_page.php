@@ -9,6 +9,10 @@
     include('includes/header.php');
   ?>
     <div id="main-edition" class="main-content">
+      <div class="page-title">
+        <h1>Édition</h1>
+        <span></span>
+      </div>
       <div id="cards-edition" class="cards">
 
         <?php

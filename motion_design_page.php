@@ -9,6 +9,10 @@
     include('includes/header.php');
   ?>
     <div id="main-motion-design" class="main-content">
+      <div class="page-title">
+        <h1>Motion design</h1>
+        <span></span>
+      </div>
       <div id="cards-motion-design" class="cards">
 
         <?php

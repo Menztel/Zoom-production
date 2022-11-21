@@ -9,6 +9,10 @@
     include('includes/header.php');
   ?>
     <div id="main-branding" class="main-content">
+      <div class="page-title">
+        <h1>Identitée visuelle</h1>
+        <span></span>
+      </div>
       <div id="cards-branding" class="cards">
 
       <?php
