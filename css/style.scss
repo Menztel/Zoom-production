@@ -69,15 +69,6 @@
       display: none;
     }
 
-    .mainMenu .icons
-    {
-      position: relative;
-      align-items: flex-end;
-    }
-    
-    /*.fa-bars {
-      color: #fff;
-    }*/
 
     /*  Header dropdown menu  */
 
@@ -299,6 +290,14 @@
       margin-top: 1.5rem;
     }
 
+    .mainMenu .closeMenu
+    {
+      width: 60px;
+      height: 60px;
+      transform: scale(0.7);
+      transition: 0.5s;
+    }
+
     .mainMenu .icons
     {
       position: absolute;
@@ -308,10 +307,9 @@
       margin-bottom: 1.5rem;
     }
 
-    .mainMenu .closeMenu,
-    .icons a {
-      height: 60px;
-      width: 60px;
+    .mainMenu .icons a {
+      height: 50px;
+      width: 50px;
       transform: scale(0.7);
       transition: 0.5s;
     }
@@ -321,24 +319,14 @@
       transform: scale(1) translateY(-15px);
     }
   
-    .mainMenu .closeMenu,
-    .icons a img {
-      height: 60px;
-      width: 60px;
+    .mainMenu .icons a img {
+      height: 50px;
+      width: 50px;
       cursor: pointer;
-    }
-
-    .inverse > a
-    {
-      height: 60px;
-      width: 60px;
+      border-radius: 50%;
       filter: invert(100);
     }
 
-    .inverse > a > img
-    {
-      border-radius: 50%;
-    }
 
     .logo {
       position: absolute;
