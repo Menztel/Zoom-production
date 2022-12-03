@@ -50,7 +50,7 @@
       justify-content: flex-end;
     }
     
-    .mainMenu {
+    #mainMenu {
       display: flex;
       list-style: none;
       height: 100vh;
@@ -58,186 +58,36 @@
       top: 0px;
       right: 0px;
       left: 0px;
-      gap: 1rem;
       z-index: 10;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      line-height: 30px;
       background: rgb(255, 255, 255);
       transition: top 1s ease 0s;
       display: none;
     }
-
-
-    /*  Header dropdown menu  */
-
-
-    #drop
-    {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transition: all 1s;
-    }
-
-    /*#right_chevron
-    {
-      position: absolute;
-      margin-top: 2.7rem;
-      rotate: 90deg;
-      animation: infinitLoop 2.5s infinite alternate; // alternate permet le retour de l'animation
-    }*/
-
-
-    @keyframes infinitLoop
-    {
-      from {
-        transform: scale(1) translateX(5px);
-      }
-
-      to {
-        transform: scale(1.2) translateX(8px);
-      }
-    }
-
-    /*#drop:hover #right_chevron
-    {
-      margin-top: 0;
-      position: none;
-      rotate: 270deg;
-      transform: translateX(5px);
-      animation: rotateChevron 0.35s;
-    }
-
-    @keyframes rotateChevron
-    {
-      from {
-        rotate: 0deg; 
-      }
-
-      to {
-        rotate: 270deg;
-      }
-    }*/
-
-    /* Dropdown Button */
-    #drop .dropbtn {
-      padding: 16px;
-      border: none;
-      background: none;
-      text-align: center;
-      font-family: "Roboto Slab";
-      font-size: 2em;
-      color: #000;
-      border: none;
-      cursor: pointer;
-      transition: 0.35s ease-in;
-    }
-
     
-    #drop:hover .dropbtn
-    {
-      transform: translateY(-10px) scale(1.2);
-    }
-
-    #drop .drop_menu
-    {
-      display: none;
-      z-index: 1;
-    }
-
-    #drop:hover .drop_menu
-    {
-      margin-bottom: 1rem;
-      display: flex;
-      justify-content: center;
-      
-    }
-
-
-    @keyframes fadein
-    {
-      from {
-        opacity: 0;
-        transform: scale(0.5);
-      }
-
-      50% {
-        
-      }
-
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    .dropdown-content
-    {
-      filter: invert(20%);
-      animation: fadein 0.5s ease-in;
-    }
-
-
-    .link-content
-    {
-      display: inline-block;
-      padding: 10px;
-      font-family: "Roboto Slab";
-      font-size: 1.5em;
-      text-decoration: none;
-      color: rgb(0, 0, 0);
-      transition: 0.35s;
-    }
-
-    .link-content:hover
-    {
-      margin: 0px 10px;
-    }
-
-
-    /* Links inside the dropdown */
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-
-    /* Change color of dropdown links on hover */
-    .dropdown-content a:hover {background-color: #ddd;}
-
-    /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-    .show 
-    {
-      display: inline-block;
-    }
-
-
-    .mainMenu > li:nth-child(3)
-    {
-      margin-top: 1rem;
-    }
-
-    .mainMenu > li a {
+    /*.fa-bars {
+      color: #fff;
+    }*/
+  
+    #mainMenu li a {
       display: inline-block;
       padding: 10px;
       font-family: "Roboto Slab";
       text-decoration: none;
       color: rgb(0, 0, 0);
-      font-size: 2em;
+      font-size: 22px;
       transition: 0.35s;
     }
-    .mainMenu li a:hover {
+    #mainMenu li a:hover {
       background: rgba(221, 220, 220, 0.329);
       font-weight: bolder;
       background: none;
       opacity: 2;
       transform: scale(1.2);
     }
-    .openMenu {
+    #openMenu {
       font-size: 2.5rem;
       margin: 20px;
       display: block;
@@ -245,31 +95,11 @@
       transition: transform 0.5s;
     }
   
-    .openMenu:hover {
+    #openMenu:hover {
       transform: scale(1.3);
     }
-
-    .openMenu .i_index
-    {
-      animation: changeColor 19s infinite;
-    }
-
-    @keyframes changeColor
-    {
-      0% {
-        color: #fff;
-      }
-
-      85% {
-        color: #fff;
-      }
-
-      100% {
-        color: #000;
-      }
-    }
   
-    .mainMenu .closeMenu {
+    #mainMenu #closeMenu {
       display: block;
       position: absolute;
       top: 20px;
@@ -279,52 +109,35 @@
       transition: 0.5s;
     }
   
-    .mainMenu .closeMenu:hover {
+    #mainMenu #closeMenu:hover {
       transform: scale(1.3) translateY(5px);
     }
   
-    .mainMenu .closeMenu 
-    {
+    #mainMenu #closeMenu,
+    .icons {
       display: flex;
       justify-content: center;
       margin-top: 1.5rem;
     }
 
-    .mainMenu .closeMenu
-    {
-      width: 60px;
+    #mainMenu #closeMenu,
+    .icons a {
       height: 60px;
+      width: 60px;
       transform: scale(0.7);
       transition: 0.5s;
     }
 
-    .mainMenu .icons
-    {
-      position: absolute;
-      bottom: 0;
-      display: flex;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .mainMenu .icons a {
-      height: 50px;
-      width: 50px;
-      transform: scale(0.7);
-      transition: 0.5s;
-    }
-
-    .mainMenu .closeMenu,
+    #mainMenu #closeMenu,
     .icons a:hover {
       transform: scale(1) translateY(-15px);
     }
   
-    .mainMenu .icons a img {
-      height: 50px;
-      width: 50px;
+    #mainMenu #closeMenu,
+    .icons a img {
+      height: 60px;
+      width: 60px;
       cursor: pointer;
-      border-radius: 50%;
-      filter: invert(100);
     }
 
 
@@ -568,14 +381,6 @@
   }
 
 
-  /* POE 2 IMG */
-
-  #poe_2_img {
-    width: 50%;
-    height:0;
-    align-self: center;
-  }
-
   /* gallery-content */
   
     .main-gallery {
@@ -603,7 +408,6 @@
     
  
   
-  
   /* FOOTER */
   
   footer {
@@ -614,8 +418,6 @@
     color:#000000;
     
   }
-  
-  
   
   
   footer ul {
@@ -678,106 +480,6 @@
     font-size:13px;
     color:rgb(0, 0, 0);
     margin-bottom:0;
-  }
-  
-
-
-
-  /* PAGES ANNEXES */
-  
-  .main-content-annexes {
-    min-height: calc(100vh - 81px - 201.59px);
-    margin: 1rem 2rem;
-  }
-
-
-  .hScroll {
-    position: absolute;
-    height: 100vw;
-    width: calc(100vh - 81px - 201.59px);;
-    padding: 20px;
-    margin-left: 15.8rem;
-    overflow: hidden auto;
-    transform-origin: right top;
-    transform: rotate(-90deg) translateY(-100vh);
-  }
-  
-  .hScroll_block {
-    margin-right: 6.5rem;
-    width: calc(100vh -25rem);
-    height: calc(100vh - 25rem);
-    transform-origin: left top;
-    transform: rotate(90deg) translateY(calc(-100vh + 20rem));
-    box-shadow: 0 3px 6px rgba(0,0,0, 0.19), 0 3px 6px rgba(0,0,0,0.23);
-  }
-
-  .hScroll_block:first-child {margin-top: 1.2rem;}
-  
-  
-
-  
-  
-
-  .hScroll_block:nth-child(1) .background_neon_body {
-    background: url(../images/annexes/neon_body/image_1.jpg);
-  }
-  
-  .hScroll_block:nth-child(2) .background_neon_body {
-    background: url(../images/annexes/neon_body/image_2.jpg);
-  }
-  
-  .hScroll_block:nth-child(3) .background_neon_body {
-    background: url(../images/annexes/neon_body/image_3.jpg);
-  }
-  
-  .hScroll_block:nth-child(4) .background_neon_body {
-    background: url(../images/annexes/neon_body/image_4.jpg);
-  }
-  
-  .hScroll_block:nth-child(5) .background_neon_body {
-    background: url(../images/annexes/neon_body/image_5.jpg);
-  }
-
-
-  /* ALIEN IMAGES */
-
-  .hScroll_block:nth-child(1) .background_alien{
-    background: url(../images/annexes/alien/image_1.jpg);
-  }
-  
-  .hScroll_block:nth-child(2) .background_alien {
-    background: url(../images/annexes/alien/image_2.jpg);
-  }
-  
-  .hScroll_block:nth-child(3) .background_alien {
-    background: url(../images/annexes/alien/image_3.jpg);
-  }
-  
-  .hScroll_block:nth-child(4) .background_alien {
-    background: url(../images/annexes/alien/image_4.jpg);
-  }
-  
-  .hScroll_block:nth-child(5) .background_alien {
-    background: url(../images/annexes/alien/image_5.jpg);
-  }
-
-  .hScroll_block:nth-child(6) .background_alien {
-    background: url(../images/annexes/alien/image_6.jpg);
-  }
-  
-  
-  
-  .hScroll .hScroll_block .background {
-    position: absolute;
-    top: 0; bottom: 0; right: 0; left: 0;
-    background-size: cover;
-    background-position: center center;
-    background-blend-mode: luminosity;
-  }
-
-  ::-webkit-scrollbar {
-    width: 0;
-    height: 0;
   }
 
 
@@ -883,16 +585,14 @@
 
   .contact-container .contactInfo .info li span:nth-child(1)
   {
-  
+    width: 30px;
+    min-width: 30px;
   }
 
 
   .contact-container .contactInfo .info li span:nth-child(1) img
   {
     max-width: 30px;
-    min-width: 30px;
-    min-height: 30px;
-    max-height: 30px;
   }
 
   .contact-container .contactInfo .info li span:nth-child(2)
@@ -1216,3 +916,214 @@
 
   }
   
+  
+  
+  /*  LOGIN PAGE  */
+
+  .main
+  {
+    display: flex;
+    justify-content: center;
+  }
+
+  /*  DASHBOARD */
+
+
+  .body-gradient 
+  {
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  #admin-content
+  {
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .glassmorph-dashboard
+  {
+    margin: 0;
+    margin-bottom: 1.5rem;
+    width: 900px;
+    display: flex;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    border: 1px solid rgb(112, 112, 112, 0.3);
+  }
+
+
+  /*  CONTACT CONTAINER*/
+  
+  .profil-container
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    backdrop-filter: blur(25px) saturate(200%);
+    -webkit-backdrop-filter: blur(25px) saturate(200%);
+    background-color: rgba(255, 255, 255, 1);
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border: 1px solid rgb(112, 112, 112, 0.3);
+  }
+
+  .profil-container .circle-profil
+  {
+    margin-bottom: 1rem;
+  }
+
+  .profil-container .circle-profil > img 
+  {
+    width: 100px;
+    height: 100px;
+  }
+
+.profil-container .id-container
+{
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 2rem;
+}
+
+.profil-container .id-container > p
+{
+ 
+  font-family: "Roboto Slab";
+}
+
+#name
+{
+  margin: 0;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#job 
+{
+  margin-top: 5px;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 1em;
+}
+
+
+.link-container
+{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: "Roboto Slab";
+}
+
+
+.link-container > a
+{
+  margin-bottom: 2rem;
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  color: #000;
+  transition: 0.5s;
+}
+
+
+.link-container > a:last-child
+{
+  margin-bottom: 1rem;
+}
+
+.link-container > a:hover
+{
+  transform: scale(1.2) translateX(-10px) translateY(5px);
+}
+
+.link-container > a > p
+{
+  margin: 0;
+  margin-left: 10px;
+  padding: 10px;
+  font-size: 1em;
+}
+
+.link-container > a > img
+{
+  margin-top: 5px;
+  width: 25px;
+  height: 25px;
+}
+
+
+/*  TEXT CONTAINER  */
+
+#text-container
+{
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto Slab";
+  gap: 2rem;
+}
+
+#text-container > h1
+{
+  margin-top: 1.2rem;
+}
+
+#text-container :nth-child(2)
+{
+  margin-top: 2rem;
+}
+
+
+
+/*  ADD PROJECT FORM  */
+
+#add-project
+{
+  display: none;
+  padding: 1.5rem;
+  flex-direction: column;
+  font-family: "Roboto Slab";
+  gap: 2rem;
+}
+
+#add-project > form
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+
+#add-project > form .name-project
+{
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+#add-project > form .name-project > input
+{
+  width: 150px;
+}
+
+#add-project .input-images
+{
+  display: flex;
+  justify-content: center;
+}
+
+
+#add-annexe-project
+{
+  display: none;
+}
