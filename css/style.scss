@@ -50,7 +50,7 @@
       justify-content: flex-end;
     }
     
-    .mainMenu {
+    #mainMenu {
       display: flex;
       list-style: none;
       height: 100vh;
@@ -71,7 +71,7 @@
       color: #fff;
     }*/
   
-    .mainMenu li a {
+    #mainMenu li a {
       display: inline-block;
       padding: 10px;
       font-family: "Roboto Slab";
@@ -80,14 +80,14 @@
       font-size: 22px;
       transition: 0.35s;
     }
-    .mainMenu li a:hover {
+    #mainMenu li a:hover {
       background: rgba(221, 220, 220, 0.329);
       font-weight: bolder;
       background: none;
       opacity: 2;
       transform: scale(1.2);
     }
-    .openMenu {
+    #openM {
       font-size: 2.5rem;
       margin: 20px;
       display: block;
@@ -95,11 +95,11 @@
       transition: transform 0.5s;
     }
   
-    .openMenu:hover {
+    #openM:hover {
       transform: scale(1.3);
     }
   
-    .mainMenu .closeMenu {
+    #mainMenu #closeMenu {
       display: block;
       position: absolute;
       top: 20px;
@@ -109,18 +109,18 @@
       transition: 0.5s;
     }
   
-    .mainMenu .closeMenu:hover {
+    #mainMenu #closeMenu:hover {
       transform: scale(1.3) translateY(5px);
     }
   
-    .mainMenu .closeMenu,
+    #mainMenu #closeMenu,
     .icons {
       display: flex;
       justify-content: center;
       margin-top: 1.5rem;
     }
 
-    .mainMenu .closeMenu,
+    #mainMenu #closeMenu,
     .icons a {
       height: 60px;
       width: 60px;
@@ -128,12 +128,12 @@
       transition: 0.5s;
     }
 
-    .mainMenu .closeMenu,
+    #mainMenu #closeMenu,
     .icons a:hover {
       transform: scale(1) translateY(-15px);
     }
   
-    .mainMenu .closeMenu,
+    #mainMenu #closeMenu,
     .icons a img {
       height: 60px;
       width: 60px;
