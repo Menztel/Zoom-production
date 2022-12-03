@@ -12,6 +12,8 @@ include('../includes/bdd.php');
 		'image/png',
 		
 	];
+    
+    
 
 	if (!in_array($_FILES['project-image']['type'], $acceptable)){
 		echo 'Format incorrecte';
@@ -67,17 +69,27 @@ include('../includes/bdd.php');
 	//On enregistre le fichier envoyé dans le serveur
 	move_uploaded_file($_FILES['project-image']['tmp_name'], $destination);
 
+
+
+    
+
+
+
     if(isset($_POST['addForm-button'])) {
        
             
+        // Insert new project into project TABLE
+            $title = $_POST['project-title'];
+            $pageName = $_POST['page-name-project'];
 
             $q = 'INSERT INTO project (title, image, page_name) VALUES (:title, :image, :page_name)';
             $statement = $bdd->prepare($q);
-            if($statement !== false) {
+            if($statement != false) 
+            {
                 $result = $statement->execute([
-                                                'title' => $_POST['project-title'],
+                                                'title' => $title,
                                                 'image' => isset($fileName) ? $fileName : '',
-                                                'page_name' => $_POST['page-name-project'] 
+                                                'page_name' => $pageName
                 ]);
 
                 if($result == true) {
@@ -87,6 +99,44 @@ include('../includes/bdd.php');
             }
             else {
                 echo "Erreur de préparation de la requête";
+            }
+            
+            
+            // Fetch idProject 
+
+            $q = 'SELECT id FROM project WHERE title = :title';
+            $statement = $bdd->prepare($q);
+            $statement->execute([
+                'title' => $title
+            ]);
+
+            if($statement)
+            {
+                $idProject = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            }
+            else
+            {
+                echo "Failed to fetch idProject";
+            }
+
+
+            // Insert new annexe image into image-annexe TABLE
+            
+            $q = 'INSERT INTO image-annexe (image,project-id) VALUES (:image, :project-id)';
+            $statement = $bdd->prepare($q);
+            if($statement != false)
+            {
+                $result = $statement->execute([
+                                                'image'=> isset($fileName) ? $fileName : '',
+                                                'project-id'=> $idProject
+                ]);
+
+                echo "Insert success";
+            }
+            else
+            {
+                echo "Failed to insert annexe images";
             }
             
     }

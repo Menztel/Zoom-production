@@ -11,13 +11,15 @@
         ?>
 
     <body class="body-gradient">
+    
+
         <?php
             include('includes/header.php');
         ?>
         <div class="main-content" id="admin-content">
 
 
-            <!--<div class="glassmorph-dashboard">
+            <div class="glassmorph-dashboard">
                 <div class="profil-container">
                     <div class="circle-profil">
                         <img src="./assets/avatar.png" alt="profil picture">
@@ -27,10 +29,10 @@
                         <p id="job">Graphiste</p>
                     </div>
                     <div class="link-container">
-                        <a href="">
+                        <button onclick="removeTextContainer()">
                             <img src="images/icons/add-icon.svg" alt="Add">
-                            <p>Ajouter</p>
-                        </a>
+                            <p id="addFormButton">Ajouter</p>
+                        </button>
                         <a href="">
                             <img src="images/icons/modif-icon.svg" alt="Modif">
                             <p>Modifier</p>
@@ -46,7 +48,7 @@
 
                     </div>
                 </div>
-                <div class="text-container">
+                <div id="text-container">
                     <h1>Bonjour Zoé !</h1>
                     <p>Bienvenue sur ton panneau  d'administrateur.<br>
                         D'ici tu pourras gérer l'intégration, la modification et la suppression des différents projets.
@@ -60,16 +62,14 @@
                 </div>
 
                 
-                </div>-->
-
-                <div class="add-project">
+                <div id="add-project">
 
                     <form action="">
 
                         <div class="name-project">
                             <input id="project-title" type="text" name="project-title">
                             <label for="project-title">Nom du projet</label>
-                            <select name="project-name" id="">
+                            <select name="page-name-project" id="">
                                 <option value="Branding">Branding</option>
                                 <option value="Photographie">Photographie</option>
                                 <option value="Motion design">Motion design</option>
@@ -81,20 +81,42 @@
 
                         <div class="input-images">
                         <input type="file" name="project-image" title=" ">
-                        <input type="file" name="project-annexe-images" title=" ">
+                        
                         </div>
 
-                        <textarea name="text-annexe" id="" cols="30" rows="5"></textarea>
+                        <button type="submit" name="addForm-button">Envoyé</button>
                     </form>
-                    
-                </div>
-        
-        <script src="js/script.js"></script>    
-        </div>
 
-        <?php
-            include('includes/footer.php');
-        ?>
+                    <div id="add-annexe-project">
+                    
+                    <form action="">
+    
+                        <input type="file" name="project-image-annexe" title="">
+                        <textarea name="text-annexe" id="" cols="30" rows="5"></textarea>
+    
+                        </form>
+                    </div>
+
+                    <button onclick="removeAddProject()" id="removeAddProject">Retour au Dashboard</button>
+                </div>
+                
+                </div>
+
+                
+                
+              
+                
+        
+        
+            </div>
+        </div>
+        
+       
+    <?php
+        include('includes/footer.php');
+    ?>
+    <script src="js/script.js"></script>
      </body>
 
 </html>
+
