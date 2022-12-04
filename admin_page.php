@@ -62,13 +62,22 @@
                 </div>
 
                 
-                <div id="add-project">
+                <div id="add">
 
-                    <form action="">
+                    <div id="add-project">
+                        
+                        <div class="text-conf">
+                            <h2>Ajouter un projet</h2>
+                            <span></span>
+                        </div>
 
-                        <div class="name-project">
-                            <input id="project-title" type="text" name="project-title">
-                            <label for="project-title">Nom du projet</label>
+                        <form action="">
+
+                            <div id="project-name">
+                                <input type="text" name="project-title">
+                                <label for="project-title">Nom du projet</label>
+                            </div>
+                            
                             <select name="page-name-project" id="">
                                 <option value="Branding">Branding</option>
                                 <option value="Photographie">Photographie</option>
@@ -77,37 +86,37 @@
                                 <option value="Edition">Edition</option>
                                 <option value="Evenementiel">Evenementiel</option>
                             </select>
-                        </div>
-
-                        <div class="input-images">
-                        <input type="file" name="project-image" title=" ">
                         
+
+                            <div class="input-images">
+                            <input id="project-image" type="file" name="project-image" multiple>
+                            <label for="project-image"><i><img src="images/icons/choose-image.png" alt="choose image"></i>Choisi ton image</label>
+                            
+                            </div>
+
+                            <button type="submit" name="addForm-button">Envoyer</button>
+                        </form>
+
+                        
+
+                        <button onclick="removeAddProject()" id="removeAddProject">Retour au Dashboard</button>
                         </div>
 
-                        <button type="submit" name="addForm-button">Envoyé</button>
-                    </form>
+                        <div id="add-annexe-project">
+                            
+                            <form action="">
+            
+                                <input type="file" name="project-image-annexe" title="">
+                                <textarea name="text-annexe" id="" cols="30" rows="5"></textarea>
+            
+                            </form>
+                        </div>
+            
+                </div>
 
-                    <div id="add-annexe-project">
                     
-                    <form action="">
-    
-                        <input type="file" name="project-image-annexe" title="">
-                        <textarea name="text-annexe" id="" cols="30" rows="5"></textarea>
-    
-                        </form>
-                    </div>
 
-                    <button onclick="removeAddProject()" id="removeAddProject">Retour au Dashboard</button>
-                </div>
-                
-                </div>
-
-                
-                
-              
-                
-        
-        
+                   
             </div>
         </div>
         
@@ -115,8 +124,8 @@
     <?php
         include('includes/footer.php');
     ?>
-    <script src="js/script.js"></script>
      </body>
+    <script src="js/script.js"></script>
 
 </html>
 

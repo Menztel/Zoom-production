@@ -1,12 +1,7 @@
-const mainMenu = document.getElementsByClassName("mainMenu");
-const closeMenu = document.getElementsByClassName("closeMenu");
-const openMenu = document.getElementsByClassName("openMenu");
+const openMenu = document.getElementById("openMenu");
+const mainMenu = document.getElementById("mainMenu");
+const closeMenu = document.getElementById("closeMenu");
 const menu_items = document.querySelectorAll('nav .mainMenu li a');
-
-
-const test = document.getElementById("text-container");
-
-console.log(test);
 
 
 openMenu.addEventListener('click',show);
@@ -49,19 +44,27 @@ function toggleSidebar()
 };
 
 
+const textContainer = document.getElementById("text-container");
+const addProjectDiv = document.getElementById("add-project");
 
 
-// Display addProject
 
-function removeTextContainer() { 
-    textContainer.style.display = "none";
-    addProjectDiv.style.display = "flex";
-    annexeProject.style.display = "unset";  
+if(textContainer != null && addProjectDiv != null)
+{
+    // Display addProject
+
+    function removeTextContainer() { 
+    
+        textContainer.style.display = "none";
+        addProjectDiv.style.display = "flex";
+    };
+    // Remove addProject
+    
+    function removeAddProject() {
+        textContainer.style.display = "flex";
+        addProjectDiv.style.display = "none";
+    };
 };
-// Remove addProject
 
-function removeAddProject() {
-    textContainer.style.display = "flex";
-    addProjectDiv.style.display = "none";
-    annexeProject.style.display = "none"; 
-};
+
+

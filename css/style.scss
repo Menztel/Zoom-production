@@ -87,7 +87,7 @@
       opacity: 2;
       transform: scale(1.2);
     }
-    #openM {
+   #openMenu {
       font-size: 2.5rem;
       margin: 20px;
       display: block;
@@ -95,7 +95,7 @@
       transition: transform 0.5s;
     }
   
-    #openM:hover {
+   #openMenu:hover {
       transform: scale(1.3);
     }
   
@@ -949,6 +949,7 @@
     margin-bottom: 1.5rem;
     width: 900px;
     display: flex;
+    gap: 1rem;
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(255, 255, 255, 0.6);
@@ -1088,32 +1089,80 @@
 
 #add-project
 {
+  position: absolute;
+  width: 300px;
+  top: 8%;
+  left: calc(450px - (1.5rem + 50px));
+  padding: 2rem;
   display: none;
-  padding: 1.5rem;
-  flex-direction: column;
   font-family: "Roboto Slab";
-  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  border: 1px solid;
+  border-radius: 10px;
+  
+  
+}
+
+.text-conf
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.text-conf > h2
+{
+  font-size: 1.5em;
+}
+
+.text-conf > span
+{
+  width: 200px;
+  height: 4px;
+  background-color: #000;
 }
 
 #add-project > form
 {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
 }
 
-
-#add-project > form .name-project
+#project-name > input
 {
-  margin-top: 1rem;
-  display: flex;
-  gap: 1rem;
+  width: 250px;
+  height: 30px;
+  padding: 15px;
+  outline: none;
+  background: transparent;
+  border-radius: 10px;
 }
 
-#add-project > form .name-project > input
+#project-name > input:hover
 {
-  width: 150px;
+  border-color: rgb(27, 27, 27);
+}
+
+#project-name > label
+{
+  position: absolute;
+  padding: 0 5px;
+  top: 5px;
+  left: 10px;
+  font-size: 14px;
+  transition: top 0.3s;
+  background-color: #FBFAF8;
+}
+
+#project-name > input:focus ~ label
+{
+  top: -10px;
 }
 
 #add-project .input-images
@@ -1122,6 +1171,68 @@
   justify-content: center;
 }
 
+
+#add-project > form select
+{
+  width: 250px;
+  height: 30px;
+  font-family: "Roboto Slab";
+  outline: none;
+  background: transparent;
+  border-radius: 10px;
+  border-color: #000;
+  text-align: center;
+}
+
+#add-project > form select:hover
+{
+  border-color: rgb(27, 27, 27);
+}
+
+#add-project > form select > option
+{
+  font-size: 1.2em;
+}
+
+.input-images > input
+{
+  display: none;
+}
+
+.input-images > label
+{
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.input-images > label:hover
+{
+  cursor: pointer;
+}
+
+#add-project > form > button
+{
+  width: 150px;
+  height: 40px;
+  font-family: "Roboto Slab";
+  font-size: 1.1em;
+  border-radius: 10px;
+  background-color: #000;
+  color: #fff;
+}
+
+
+#add-project > button
+{
+  width: 200px;
+  height: 40px;
+  font-family: "Roboto Slab";
+  font-size: 1.1em;
+  border-radius: 10px;
+  background-color: #000;
+  color: #fff;
+}
 
 #add-annexe-project
 {
