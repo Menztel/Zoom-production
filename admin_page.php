@@ -29,18 +29,19 @@
                         <p id="job">Graphiste</p>
                     </div>
                     <div class="link-container">
-                        <button onclick="removeTextContainer()">
+                        <button class="menu-button" onclick="">
                             <img src="images/icons/add-icon.svg" alt="Add">
-                            <p id="addFormButton">Ajouter</p>
+                            <p>Ajouter</p>
                         </button>
-                        <a href="">
+                        <button class="menu-button" onclick="">
                             <img src="images/icons/modif-icon.svg" alt="Modif">
                             <p>Modifier</p>
-                        </a>
-                        <a href="">
+                        </button>
+                        <button class="menu-button" onclick="">
                             <img src="images/icons/delete-icon.svg" alt="Delete">
                             <p>Supprimer</p>
-                        </a>
+                        </button>
+                        
                         <a href="includes/deconnexion.php">
                             <img src="images/icons/logout-icon.png" alt="Log out">
                             <p>Déconnexion</p>
