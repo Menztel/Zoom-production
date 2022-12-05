@@ -9,8 +9,8 @@
         <header>
             <nav class="nav_home">
                 <div class="logo"><a href="index.php"><img src="logo_zoom.svg"></a></div>
-                <div class="openMenu"><i class="fa fa-bars i_index"></i></div>
-                <ul class="mainMenu">
+                <div id="openMenu"><i class="fa fa-bars i_index"></i></div>
+                <ul id="mainMenu">
 
 
                 <div id="drop">
@@ -35,7 +35,7 @@
                     }
                 ?>
                 
-                <div class="closeMenu"><i class="fa fa-times"></i></div>
+                <div id="closeMenu"><i class="fa fa-times"></i></div>
                 <span class="icons">
                         <a href="https://www.facebook.com/zoom.production.tahiti"><img src="images/icons/facebook.svg" alt="facebook_logo"></a>
                         <a href="https://www.instagram.com/zoom.production.tahiti"><img src="images/icons/instagram.svg" alt="instagram_logo"></a>

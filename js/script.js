@@ -1,7 +1,7 @@
-const mainMenu = document.querySelector('.mainMenu');
-const closeMenu = document.querySelector('.closeMenu');
-const openMenu = document.querySelector('.openMenu');
-const menu_items = document.querySelectorAll('nav .mainMenu li a');
+const mainMenu = document.getElementById('mainMenu');
+const closeMenu = document.getElementById('closeMenu');
+const openMenu = document.getElementById('openMenu');
+const menu_items = document.querySelectorAll('nav #mainMenu li a');
 
 
 
