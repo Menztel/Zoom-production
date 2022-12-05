@@ -29,7 +29,7 @@
                         <p id="job">Graphiste</p>
                     </div>
                     <div class="link-container">
-                        <button class="menu-button" onclick="">
+                        <button class="menu-button" onclick="removeTextContainer()">
                             <img src="images/icons/add-icon.svg" alt="Add">
                             <p>Ajouter</p>
                         </button>
