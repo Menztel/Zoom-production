@@ -4,6 +4,8 @@ const closeMenu = document.getElementById("closeMenu");
 const menu_items = document.querySelectorAll('nav .mainMenu li a');
 
 
+
+
 openMenu.addEventListener('click',show);
 closeMenu.addEventListener('click',close);
 
@@ -43,28 +45,6 @@ function toggleSidebar()
     document.body.classList.toggle("open");
 };
 
-
-const textContainer = document.getElementById("text-container");
-const addProjectDiv = document.getElementById("add-project");
-
-
-
-if(textContainer != null && addProjectDiv != null)
-{
-    // Display addProject
-
-    function removeTextContainer() { 
-    
-        textContainer.style.display = "none";
-        addProjectDiv.style.display = "flex";
-    };
-    // Remove addProject
-    
-    function removeAddProject() {
-        textContainer.style.display = "flex";
-        addProjectDiv.style.display = "none";
-    };
-};
 
 
 
