@@ -28,6 +28,7 @@ include('../includes/bdd.php');
 		echo 'Image trop lourde';
     }
 
+
 	//ENREGISTREMENT DE L'IMAGE 
 
     if($_POST['page-name-project'] == "Branding"){

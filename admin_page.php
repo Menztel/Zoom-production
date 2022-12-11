@@ -65,7 +65,7 @@
 
                 </div>
 
-                <a href="">
+                <a href="includes/deconnexion.php">
                     <img src="images/icons/logout-icon.svg" alt="log out">
                     Déconnexion
                 </a>
@@ -73,11 +73,47 @@
             </div>
 
 
-            <div id="main-container"></div>
+            <div id="main-container">
+                
+                <div id="project">
+                    
+                    <p>Ajouter un projet</p>
+                    
+                    <form id="add-form" action="project_integration/create_project.php" method="POST">
+                        <input type="text" name="project-title">
+                        <select name="page-name-project" id="select-page">
+                            <option value="">Photographie</option>
+                            <option value="">Motion design</option>
+                            <option value="">Illustration</option>
+                            <option value="">Édition</option>
+                            <option value="">Évènementiel</option>
+                        </select>
+                        <input type="file" name="project-image" id="file">
+                        <input type="submit" name="addForm-button" value="Envoyer">
+                    </form>
+                   
+                </div>
+
+                <div id="annexe">
+
+                    <p>Ajouter une annexe</p>
+
+                    <input type="text" placeholder="sous-titre">
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <label for="multi-file">Choisi plusieurs images</label>
+                    <input type="file" name="" id="multi-file">
+                
+                </div>
+
+            </div>
 
 
             <div id="right-container">
-                <div id="profil-content">   </div>
+                <div id="profil-content">
+                    <img src="assets/avatar.png" alt="avatar">
+                    <p>Zoe Lavisse</p>
+                    <p>Graphiste</p>
+                </div>
             </div>
     
         </div>

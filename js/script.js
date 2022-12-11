@@ -1,4 +1,4 @@
-const openMenu = document.getElementById("openMenu");
+/*const openMenu = document.getElementById("openMenu");
 const mainMenu = document.getElementById("mainMenu");
 const closeMenu = document.getElementById("closeMenu");
 const menu_items = document.querySelectorAll('nav .mainMenu li a');
@@ -45,6 +45,7 @@ function toggleSidebar()
     document.body.classList.toggle("open");
 };
 
+*/
 
-
-
+const select = document.querySelector('#select-page');
+console.log(select);
