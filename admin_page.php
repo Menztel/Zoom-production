@@ -79,17 +79,17 @@
                     
                     <p>Ajouter un projet</p>
                     
-                    <form id="add-form" action="project_integration/create_project.php" method="POST">
+                    <form id="add-form" action="project_integration/create_project.php" method="POST" enctype="multipart/form-data">
                         <input type="text" name="project-title">
                         <select name="page-name-project" id="select-page">
-                            <option value="">Photographie</option>
-                            <option value="">Motion design</option>
-                            <option value="">Illustration</option>
-                            <option value="">Édition</option>
-                            <option value="">Évènementiel</option>
+                            <option value="Photographie">Photographie</option>
+                            <option value="Motion design">Motion design</option>
+                            <option value="Illustration">Illustration</option>
+                            <option value="Édition">Édition</option>
+                            <option value="Évènementiel">Évènementiel</option>
                         </select>
                         <input type="file" name="project-image" id="file">
-                        <input type="submit" name="addForm-button" value="Envoyer">
+                        <button type="submit" name="addForm-button">Envoyer</button>
                     </form>
                    
                 </div>
@@ -97,11 +97,40 @@
                 <div id="annexe">
 
                     <p>Ajouter une annexe</p>
+                    <form action="project_integration/create_annexe.php" method="POST" enctype="multipart/form-data">
 
-                    <input type="text" placeholder="sous-titre">
+                    <?php
+                    
+                        include('includes/bdd.php');
+
+                        $q = 'SELECT title FROM project';
+                        $statement = $bdd->query($q);
+                        
+
+                        if($statement){
+                            
+                            $projectsTitle = $statement->fetchALL(PDO::FETCH_ASSOC);
+                            
+                            echo '<select name="page-name-annexe">';
+
+                                foreach($projectsTitle as $title){
+                        
+                                     echo '<option value="' . $title['title'] . '">' . $title['title'] . '</option>';  
+                                    };  
+
+                            echo '</select>';
+                                  
+                            };
+                    
+                    ?>
+
+                    <input type="text" name="subtitle" placeholder="sous-titre">
                     <textarea name="" id="" cols="30" rows="10"></textarea>
-                    <label for="multi-file">Choisi plusieurs images</label>
-                    <input type="file" name="" id="multi-file">
+                    <input type="file" name="uploads[]" id="multi-file" multiple>
+                    <!--<label for="multi-file">Choisi plusieurs images</label>-->
+                    <button type="submit" name="add-annexe">Envoyer</button>
+                    </form>
+                    
                 
                 </div>
 

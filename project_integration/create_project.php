@@ -31,10 +31,6 @@ include('../includes/bdd.php');
 
 	//ENREGISTREMENT DE L'IMAGE 
 
-    if($_POST['page-name-project'] == "Branding"){
-        $path = '../images/branding';
-    }
-
     if($_POST['page-name-project'] == "Photographie"){
         $path = '../images/photographie';
     }
@@ -47,11 +43,11 @@ include('../includes/bdd.php');
         $path = '../images/illustration';
     }
 
-    if($_POST['page-name-project'] == "Edition"){
+    if($_POST['page-name-project'] == "Édition"){
         $path = '../images/edition';
     }
 
-    if($_POST['page-name-project'] == "Evenementiel"){
+    if($_POST['page-name-project'] == "Évènementiel"){
         $path = '../images/evenementiel';
     }
 
@@ -82,6 +78,7 @@ include('../includes/bdd.php');
         // Insert new project into project TABLE
             $title = $_POST['project-title'];
             $pageName = $_POST['page-name-project'];
+            var_dump(($pageName));
 
             $q = 'INSERT INTO project (title, image, page_name) VALUES (:title, :image, :page_name)';
             $statement = $bdd->prepare($q);
@@ -100,10 +97,11 @@ include('../includes/bdd.php');
             }
             else {
                 echo "Erreur de préparation de la requête";
-            }
+            };
+    }
             
             
-            // Fetch idProject 
+            /*// Fetch idProject 
 
             $q = 'SELECT id FROM project WHERE title = :title';
             $statement = $bdd->prepare($q);
@@ -141,7 +139,7 @@ include('../includes/bdd.php');
             }
             
     }
-        
+     */   
     
 
 ?>
