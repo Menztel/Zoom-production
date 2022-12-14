@@ -47,6 +47,18 @@ function toggleSidebar()
 
 */
 
-const select = document.querySelector('#select-page');
-console.log(select);
+// display forms
+
+const menuLinks = document.getElementById('menu');
+const addButton = menuLinks.children[0];
+const project = document.getElementById('project');
+const annexe = document.getElementById('annexe');
+
+addButton.addEventListener('click', function() {
+    project.style.display = 'flex';
+    annexe.style.display = 'flex';
+});
+
+
+
 

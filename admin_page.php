@@ -21,6 +21,11 @@
                 <div id="menu">
                     
                     <button class="link">
+                        <img src="images/icons/dashboard-icon.svg" alt="dashboard">
+                        Dashboard
+                    </button>    
+
+                    <button class="link">
                         <img src="images/icons/add-icon.svg" alt="add">
                         Ajouter
                     </button>
@@ -74,6 +79,7 @@
 
 
             <div id="main-container">
+
                 
                 <div id="project">
                     
