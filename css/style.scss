@@ -1119,6 +1119,20 @@
   }
 
 
+  /*  MAIN TEXT*/
+
+  #main-text
+  {
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  #main-text h2
+  {
+    margin-bottom: 2rem;
+  }
 
 
   /*  PROJECT */

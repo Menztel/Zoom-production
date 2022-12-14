@@ -50,11 +50,20 @@ function toggleSidebar()
 // display forms
 
 const menuLinks = document.getElementById('menu');
-const addButton = menuLinks.children[0];
+const dashButton = menuLinks.children[0];
+const addButton = menuLinks.children[1];
+const mainText = document.getElementById('main-text');
 const project = document.getElementById('project');
 const annexe = document.getElementById('annexe');
 
+dashButton.addEventListener('click', function(){
+    mainText.style.display = 'flex';
+    project.style.display = 'none';
+    annexe.style.display = 'none';
+});
+
 addButton.addEventListener('click', function() {
+    mainText.style.display = 'none';
     project.style.display = 'flex';
     annexe.style.display = 'flex';
 });

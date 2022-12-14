@@ -80,6 +80,12 @@
 
             <div id="main-container">
 
+                <div id="main-text">
+                    <h2>Bienvenue Zoe !</h2>
+                    <p>Ici tu trouveras tous les outils et fonctionnalités qui pourront t'aider à intégrer tes projets mais aussi à les modifier et supprimer à tout moment.</p>
+                    <p>N'hésite pas à me contacter si tu es perdue après tout, tu es la soeur de Heidi donc je me méfie ;)</p>
+                    <p>Je vais te préparer un moyen de me contacter directement de ce dashboard par mail (plus tard)</p>
+                </div>
                 
                 <div id="project">
                     
