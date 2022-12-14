@@ -20,20 +20,7 @@ include('../includes/bdd.php');
             $fileType = $_FILES['uploads']['type'][$key];
             $fileSize = $_FILES['uploads']['size'][$key];
 
-            $count = 0;
-
-            $directory = '../images/annexes/';
-
-            move_uploaded_file($fileTmpName, $directory.$fileName);
-
-
-            
-            //Vérification image : fichier uploadé est une image et ne dépasse pas 1Mo.
-
-
-            //si le fichier n'est pas du bon type : pas dans le tableau de type alors redirection avec message
-            
-            /*$acceptable = [
+            $acceptable = [
                 'image/jpeg',
                 'image/gif',
                 'image/png',
@@ -55,11 +42,15 @@ include('../includes/bdd.php');
                 echo 'Image trop lourde';
             }
 
+            $array= explode('.', $fileName);
+            $extension = end($array);
+            $fileName ='img-' . rand() . '.' . $extension ;
+   
 
-            //ENREGISTREMENT DE L'IMAGE 
+             //ENREGISTREMENT DE L'IMAGE 
 
-            if($_POST['page-name-annexe']){
-                $path = '../images/annexes/' . $_POST['page-name-annexe'] . '';
+             if($_POST['page-name-annexe']){
+                $path = '../images/annexes/' . $_POST['page-name-annexe'] . '/' . '';
             }
         
 
@@ -67,18 +58,11 @@ include('../includes/bdd.php');
                 mkdir($path, 0777); //chmod 777
             }
 
+            move_uploaded_file($fileTmpName, $path.$fileName);
+
+            header('location: ../admin_page.php');
             
-
-            $array= explode('.', $fileName);
-
-            $extension = end($array);
-            $fileName ='img-' . time() . '.' . $extension ;
-            $destination = $path . '/' . $fileName ;
-
-            //On enregistre le fichier envoyé dans le serveur
-            move_uploaded_file($fileTmpName, $destination);
-            */
-        }
+        };
 
         //header('location: ../admin_page.php?alert=Inserted');
             
