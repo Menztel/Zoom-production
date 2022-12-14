@@ -99,47 +99,5 @@ include('../includes/bdd.php');
                 echo "Erreur de préparation de la requête";
             };
     }
-            
-            
-            /*// Fetch idProject 
-
-            $q = 'SELECT id FROM project WHERE title = :title';
-            $statement = $bdd->prepare($q);
-            $statement->execute([
-                'title' => $title
-            ]);
-
-            if($statement)
-            {
-                $idProject = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-            }
-            else
-            {
-                echo "Failed to fetch idProject";
-            }
-
-
-            // Insert new annexe image into image-annexe TABLE
-            
-            $q = 'INSERT INTO image-annexe (image,project-id) VALUES (:image, :project-id)';
-            $statement = $bdd->prepare($q);
-            if($statement != false)
-            {
-                $result = $statement->execute([
-                                                'image'=> isset($fileName) ? $fileName : '',
-                                                'project-id'=> $idProject
-                ]);
-
-                echo "Insert success";
-            }
-            else
-            {
-                echo "Failed to insert annexe images";
-            }
-            
-    }
-     */   
-    
 
 ?>

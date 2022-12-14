@@ -111,7 +111,7 @@
                             
                             $projectsTitle = $statement->fetchALL(PDO::FETCH_ASSOC);
                             
-                            echo '<select name="page-name-annexe">';
+                            echo '<select name="project-name-annexe">';
 
                                 foreach($projectsTitle as $title){
                         
@@ -125,7 +125,7 @@
                     ?>
 
                     <input type="text" name="subtitle" placeholder="sous-titre">
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <textarea name="description" id="" cols="30" rows="10"></textarea>
                     <input type="file" name="uploads[]" id="multi-file" multiple>
                     <!--<label for="multi-file">Choisi plusieurs images</label>-->
                     <button type="submit" name="add-annexe">Envoyer</button>

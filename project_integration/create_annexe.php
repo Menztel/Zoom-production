@@ -9,11 +9,49 @@ include('../includes/bdd.php');
 
 
     if(isset($_POST['add-annexe'])) {
+        
+        $namePage = $_POST['project-name-annexe'];
+
+        // Fetch id of project
+
+        $q = 'SELECT id FROM project WHERE title = ?';
+        $statement = $bdd->prepare($q);
+
+        if($statement)
+        {
+            $result = $statement->execute(array($namePage));
+            $projectId = $statement->fetch(PDO::FETCH_ASSOC);
+        }
+
+        
+
+          // Insert annexe
+       
+        $subtitle = $_POST['subtitle'];
+        $description = $_POST['description'];
+        $project_id = implode($projectId); // transform $projectId array into a string
+
+        
+
+        $q = 'INSERT INTO annexe(subtitle, description, id_project) VALUES(:subtitle, :description, :id_project)';
+            $statement = $bdd->prepare($q);
+            
+            if($statement != false)
+            {
+                $result = $statement->execute([
+                                                'subtitle' => $subtitle,
+                                                'description' => $description,
+                                                'id_project' => $project_id 
+                ]);
+            }
+
        
             
+            
+       
         // Insert new project into project TABLE
         foreach($_FILES['uploads']['tmp_name'] as $key => $image){
-            //var_dump($_FILES['uploads']['tmp_name'][$key]);
+        
             
             $fileName = $_FILES['uploads']['name'][$key];
             $fileTmpName = $_FILES['uploads']['tmp_name'][$key];
@@ -45,12 +83,12 @@ include('../includes/bdd.php');
             $array= explode('.', $fileName);
             $extension = end($array);
             $fileName ='img-' . rand() . '.' . $extension ;
-   
 
-             //ENREGISTREMENT DE L'IMAGE 
 
-             if($_POST['page-name-annexe']){
-                $path = '../images/annexes/' . $_POST['page-name-annexe'] . '/' . '';
+            //ENREGISTREMENT DE L'IMAGE 
+
+            if($namePage){
+                $path = '../images/annexes/' . $namePage . '/' . '';
             }
         
 
@@ -60,51 +98,37 @@ include('../includes/bdd.php');
 
             move_uploaded_file($fileTmpName, $path.$fileName);
 
-            header('location: ../admin_page.php');
             
-        };
-
-        //header('location: ../admin_page.php?alert=Inserted');
-            
-            
-            
-            // Fetch idProject 
-
-           /* $q = 'SELECT id FROM project WHERE title = :title';
+            // Fetch annexe id
+        
+            $q = 'SELECT id FROM annexe WHERE subtitle = ?';
             $statement = $bdd->prepare($q);
-            $statement->execute([
-                'title' => $title
-            ]);
 
             if($statement)
             {
-                $idProject = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-            }
-            else
-            {
-                echo "Failed to fetch idProject";
+                $result = $statement->execute(array($subtitle));
+                $result = $statement->fetch(PDO::FETCH_ASSOC);
+                $annexeId = implode($result); // Array to string
             }
 
 
-            // Insert new annexe image into image-annexe TABLE
-            
-            $q = 'INSERT INTO image-annexe (image,project-id) VALUES (:image, :project-id)';
+            // Insert images
+
+            $q = 'INSERT INTO images(name, id_annexe) VALUES(:name, :id_annexe)';
             $statement = $bdd->prepare($q);
+            
             if($statement != false)
             {
                 $result = $statement->execute([
-                                                'image'=> isset($fileName) ? $fileName : '',
-                                                'project-id'=> $idProject
+                                                'name' => $fileName,
+                                                'id_annexe' => $annexeId
                 ]);
-
-                echo "Insert success";
             }
-            else
-            {
-                echo "Failed to insert annexe images";
-            }*/
+
+            //header('location: ../admin_page.php');
             
+        };
+      
     }
         
     
