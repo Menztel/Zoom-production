@@ -1032,7 +1032,7 @@
 
   /*  PROJECT CONTAINER */
 
-  #project-container
+  #delete-container
   {
     display: flex;
     flex-direction: column;
@@ -1040,7 +1040,7 @@
   }
 
 
-  #project-container > button
+  #delete-container > button
   {
     padding-top: 5px;
     padding-bottom: 5px;
@@ -1056,19 +1056,19 @@
   }
 
 
-  #project-container > button > img
+  #delete-container > button > img
   {
     width: 20px;
     height: 20px;
   }
 
-  #project-container > button:hover
+  #delete-container > button:hover
   {
     background-color: #EEE6E3;
   }
 
   
-  #project-container > ul
+  #delete-container > ul
   {
     margin-left: 3rem;
     display: none;
@@ -1076,17 +1076,17 @@
     gap: 1rem;
   }
 
-  #project-container:hover ul
+  #delete-container:hover ul
   {
     display: flex;
   }
 
-  #project-container > ul > li
+  #delete-container > ul > li
   {
     list-style: none;
   }
 
-  #project-container > ul > li > a
+  #delete-container > ul > li > a
   {
     font-family: "Roboto Slab";
     font-size: 0.8em;
@@ -1095,7 +1095,7 @@
     opacity: 0.8;
   }
 
-  #project-container > ul > li > a:hover
+  #delete-container > ul > li > a:hover
   {
     opacity: 1;
   }
@@ -1214,7 +1214,7 @@
 
   /*  MODIF CONTAINER*/
 
-  
+
 
 /*  RIGHT CONTAINER */
 

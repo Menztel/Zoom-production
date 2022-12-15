@@ -36,18 +36,12 @@
                         Modifier
                     </button>
                 
-
-                
-                    <button class="link">
-                        <img src="images/icons/delete-icon.svg" alt="delete">
-                        Supprimer
-                    </button>
                     
 
-                    <div id="project-container">
+                    <div id="delete-container">
                         <button>
-                            <img src="images/icons/project-icon.png" alt="project"> 
-                        Projets
+                            <img src="images/icons/delete-icon.svg" alt="delete"> 
+                        Supprimer
                         </button>
                         <ul>
                             <li>
