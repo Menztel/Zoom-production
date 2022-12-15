@@ -1032,7 +1032,7 @@
 
   /*  PROJECT CONTAINER */
 
-  #delete-container
+  #delete-section
   {
     display: flex;
     flex-direction: column;
@@ -1040,7 +1040,7 @@
   }
 
 
-  #delete-container > button
+  #delete-section > button
   {
     padding-top: 5px;
     padding-bottom: 5px;
@@ -1056,19 +1056,19 @@
   }
 
 
-  #delete-container > button > img
+  #delete-section > button > img
   {
     width: 20px;
     height: 20px;
   }
 
-  #delete-container > button:hover
+  #delete-section > button:hover
   {
     background-color: #EEE6E3;
   }
 
   
-  #delete-container > ul
+  #delete-section > ul
   {
     margin-left: 3rem;
     display: none;
@@ -1076,17 +1076,17 @@
     gap: 1rem;
   }
 
-  #delete-container:hover ul
+  #delete-section:hover ul
   {
     display: flex;
   }
 
-  #delete-container > ul > li
+  #delete-section > ul > li
   {
     list-style: none;
   }
 
-  #delete-container > ul > li > a
+  #delete-section > ul > li > a
   {
     font-family: "Roboto Slab";
     font-size: 0.8em;
@@ -1095,7 +1095,7 @@
     opacity: 0.8;
   }
 
-  #delete-container > ul > li > a:hover
+  #delete-section > ul > li > a:hover
   {
     opacity: 1;
   }

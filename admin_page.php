@@ -38,7 +38,7 @@
                 
                     
 
-                    <div id="delete-container">
+                    <div id="delete-section">
                         <button>
                             <img src="images/icons/delete-icon.svg" alt="delete"> 
                         Supprimer
@@ -142,6 +142,10 @@
 
                 <div id="modif-container">
                             
+                </div>
+
+                <div id="delete-container">
+
                 </div>
 
             </div>
