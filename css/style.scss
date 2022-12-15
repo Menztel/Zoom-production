@@ -269,7 +269,7 @@
     .main-content .cards .box {
       position: relative;
       transition: 0.5s;
-}
+    }
      
     .main-content .cards .box:hover {
       box-shadow: none;
@@ -1214,6 +1214,94 @@
 
   /*  MODIF CONTAINER*/
 
+
+
+
+  /*  DELETE CONTAINER  */
+
+  #delete-container
+  {
+    display: none;
+    grid-template-columns: repeat(3, 10rem);
+    grid-auto-rows: 10rem;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .box-admin {
+    position: relative;
+    transition: 0.5s;
+  }
+   
+  .box-admin:hover {
+    box-shadow: none;
+    transform: scale(1.05);
+  }
+
+  .box-admin:hover .imgBox-admin {
+    transform: translate(-0.4rem, -0.2rem);
+  }
+
+  .box-admin:hover .voile-admin {
+    transform: translate(-0.4rem, -0.2rem);
+  }
+  
+
+ .imgBox-admin {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .imgBox-admin img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    resize: both;
+  }
+
+
+  .voile-admin {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    transition: all 0.5s ease-in-out;
+  }
+
+
+  .voile-admin:hover .overlay-admin{
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .voile-admin .overlay-admin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(1.2);
+    opacity: 0;
+    transition: transform .4s ease 0s;
+}
+
+.overlay-admin span{
+  position: absolute;
+  transform: scale(1);
+  transition: transform .4s ease 0s;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-family: "Roboto Slab"; 
+}
 
 
 /*  RIGHT CONTAINER */

@@ -53,19 +53,24 @@ const menuLinks = document.getElementById('menu');
 const dashButton = menuLinks.children[0];
 const addButton = menuLinks.children[1];
 const modifButton = menuLinks.children[2];
+const deleteButton = menuLinks.lastElementChild.firstElementChild;
+
+const mainContainer = document.getElementById('main-container');
 const mainText = document.getElementById('main-text');
 const project = document.getElementById('project');
 const annexe = document.getElementById('annexe');
 const modif = document.getElementById('modif-container');
+const deleteContainer = document.getElementById('delete-container');
 
 
-dashButton.addEventListener('click', function(){
+dashButton.addEventListener('click', () => {
     mainText.style.display = 'flex';
     project.style.display = 'none';
     annexe.style.display = 'none';
+    deleteContainer.style.display = 'none';
 });
 
-addButton.addEventListener('click', function() {
+addButton.addEventListener('click', () => {
     mainText.style.display = 'none';
     project.style.display = 'flex';
     annexe.style.display = 'flex';
@@ -79,5 +84,9 @@ modifButton.addEventListener('click', () => {
 });
 
 
-
+deleteButton.addEventListener('click', () => {
+    mainContainer.style.gap = '0';
+    mainText.style.display = 'none';
+    deleteContainer.style.display = 'grid';
+})
 

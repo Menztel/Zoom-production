@@ -145,7 +145,29 @@
                 </div>
 
                 <div id="delete-container">
-
+                        <?php
+                        
+                            $q = 'SELECT title, image, page_name FROM project';
+                            $req = $bdd->query($q);
+                            if($req !== false) {
+                                $projects = $req->fetchALL(PDO::FETCH_ASSOC);
+                    
+                
+                                foreach($projects as $project) {
+                                    echo '<div class="box-admin">';
+                                        echo '<div class="imgBox-admin">' . '<img src="images/photographie/' . $project['image'] . '">' . '</div>';
+                                        echo '<div class="voile-admin">';
+                                        echo '<div class="overlay-admin">' . '<span>' . $project['title']  . '</span>' . '</div>';
+                                        echo '</div>';
+                                    echo '</div>'; 
+                                }
+                            
+                                    
+                
+                            }
+                            else {echo "Erreur de préparation de la requête";}
+                        
+                            ?>
                 </div>
 
             </div>
