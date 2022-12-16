@@ -30,12 +30,6 @@
                         Ajouter
                     </button>
                 
-                
-                    <button class="link">
-                        <img src="images/icons/modif-icon.svg" alt="modify">
-                        Modifier
-                    </button>
-                
                     
 
                     <div id="delete-section">
@@ -43,23 +37,14 @@
                             <img src="images/icons/delete-icon.svg" alt="delete"> 
                         Supprimer
                         </button>
-                        <ul>
-                            <li>
-                                <a href="">Photographie</a>
-                            </li>
-                            <li>
-                                <a href="">Motion design</a>
-                            </li>
-                            <li>
-                                <a href="">Illustration</a>
-                            </li>
-                            <li>
-                                <a href="">Édition</a>
-                            </li>
-                            <li>
-                                <a href="">Évènementiel</a>
-                            </li>
-                        </ul>
+
+                        <select name="page-name-project" id="filter-page">
+                            <option value="Photographie">Photographie</option>
+                            <option value="Motion design">Motion design</option>
+                            <option value="Illustration">Illustration</option>
+                            <option value="Édition">Édition</option>
+                            <option value="Évènementiel">Évènementiel</option>
+                        </select>
                     </div>
 
                 </div>
@@ -143,32 +128,79 @@
                 <div id="modif-container">
                             
                 </div>
+                
+                <div id="delete">
+                
+                    <h2 id="state_project">Tous les projets</h2>
 
-                <div id="delete-container">
+                    <div id="delete-container">
                         <?php
                         
+                            $src = '';
                             $q = 'SELECT title, image, page_name FROM project';
                             $req = $bdd->query($q);
                             if($req !== false) {
                                 $projects = $req->fetchALL(PDO::FETCH_ASSOC);
-                    
-                
+
+                                
                                 foreach($projects as $project) {
                                     echo '<div class="box-admin">';
-                                        echo '<div class="imgBox-admin">' . '<img src="images/photographie/' . $project['image'] . '">' . '</div>';
+                                    
+                                    // Optimisation (Changer le nom des pages pour mettre en minuscule)
+
+                                    /*$name = ['Photographie', 'Motion design', 'Illustration', "Édition", "Évènementiel"];
+                                    $src = '';
+                                    for($i = 0; $i < count($name); $i++){
+                                        if($project['page_name'] == $name[$i])
+                                        {
+                                            $src = 'images/' . strtolower($project['name']) .''
+                                        }
+                                    }*/
+                                    
+                                    if($project['page_name'] == 'Photographie')
+                                    {
+                                        $src = 'images/photographie/' . $project['image'] .'';
+                                    };
+
+                                    if($project['page_name'] == 'Motion design')
+                                    {
+                                        $src = 'images/motion_design/' . $project['image'] .''; 
+                                    }
+                                    
+                                    if($project['page_name'] == 'Illustration')
+                                    {
+                                        $src = 'images/illustration/' . $project['image'] .''; 
+                                    }
+
+                                    if($project['page_name'] == "Édition")
+                                    {
+                                        $src = 'images/edition/' . $project['image'] .''; 
+                                    }
+
+                                    if($project['page_name'] == "Évènementiel")
+                                    {
+                                        $src = 'images/evenementiel/' . $project['image'] .''; 
+                                    }
+                                    
+                                        echo '<div class="imgBox-admin">' . '<img src="' . $src .'">' . '</div>';
                                         echo '<div class="voile-admin">';
                                         echo '<div class="overlay-admin">' . '<span>' . $project['title']  . '</span>' . '</div>';
                                         echo '</div>';
+
                                     echo '</div>'; 
                                 }
                             
                                     
-                
+
                             }
                             else {echo "Erreur de préparation de la requête";}
+                    
+                        ?>
                         
-                            ?>
+                    </div>
+
                 </div>
+                
 
             </div>
 

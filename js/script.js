@@ -60,7 +60,7 @@ const mainText = document.getElementById('main-text');
 const project = document.getElementById('project');
 const annexe = document.getElementById('annexe');
 const modif = document.getElementById('modif-container');
-const deleteContainer = document.getElementById('delete-container');
+const deleteContainer = document.getElementById('delete');
 
 
 dashButton.addEventListener('click', () => {
@@ -87,6 +87,29 @@ modifButton.addEventListener('click', () => {
 deleteButton.addEventListener('click', () => {
     mainContainer.style.gap = '0';
     mainText.style.display = 'none';
-    deleteContainer.style.display = 'grid';
+    deleteContainer.style.display = 'flex';
 })
+
+
+
+// ONLOAD to reload fetch projects with page_name filter
+
+$(document).ready(function(){
+    $("#filter-page").on('change', function(){
+        let value = $(this).val();
+        //alert(value);
+
+        $.ajax({
+            url: "project_integration/fetch_project.php",
+            type: "POST",
+            data: 'request=' + value,
+            beforeSend:function(){
+                $("#delete-container").html("<span>Chargement..</span>");
+            },
+            success:function(data){
+                $("#delete-container").html(data);
+            }
+        });
+    });
+});
 

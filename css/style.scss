@@ -1219,11 +1219,19 @@
 
   /*  DELETE CONTAINER  */
 
-  #delete-container
+  #delete
   {
     display: none;
-    grid-template-columns: repeat(3, 10rem);
-    grid-auto-rows: 10rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  #delete-container
+  {
+    display: grid;
+    grid-template-columns: repeat(3, 12rem);
+    grid-auto-rows: 12rem;
     justify-content: center;
     gap: 3rem;
   }
