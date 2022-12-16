@@ -96,18 +96,18 @@ deleteButton.addEventListener('click', () => {
 
 $(document).ready(function(){
     $("#filter-page").on('change', function(){
-        let value = $(this).val();
+        let value = $(this).val(); // take the value of filter_page select
         //alert(value);
 
         $.ajax({
             url: "project_integration/fetch_project.php",
             type: "POST",
-            data: 'request=' + value,
+            data: 'request=' + value, // create variable to send the request
             beforeSend:function(){
-                $("#delete-container").html("<span>Chargement..</span>");
+                $("#delete-container").html("<span>Chargement..</span>"); // create a span before send
             },
             success:function(data){
-                $("#delete-container").html(data);
+                $("#delete-container").html(data); // return succes of request sended
             }
         });
     });
