@@ -6,6 +6,19 @@
 <body id="model-page">
     <?php
          include('includes/header.php');
+
+        include('includes/bdd.php');
+
+
+        $q = 'SELECT * FROM project JOIN annexe ON project.id = annexe.id_project';
+        $statement = $bdd->query($q);
+
+        if($statement != false)
+        {
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        var_dump($result);
     ?>
     <div class="main-content model-content">
     <h1>TITRE DU PROJET</h1>
