@@ -17,7 +17,7 @@
 
       <?php
 
-        $q = 'SELECT id, title, image, page_name FROM project';
+        $q = 'SELECT title, image, page_name FROM project';
         $req = $bdd->query($q);
         if($req !== false) {
             $projects = $req->fetchALL(PDO::FETCH_ASSOC);
