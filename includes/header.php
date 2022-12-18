@@ -4,7 +4,7 @@
             <div id="openMenu"><i class="fa fa-bars"></i></div>
             <ul id="mainMenu">
 
-
+            <li><a href="">À propos</a></li>
             <div id="drop">
 
             <p class="dropbtn">Projets</p>
@@ -20,7 +20,7 @@
 
             
 
-            <!--<li><a href="evenementiel_page.php">À propos</a></li>-->
+            
             <li><a href="contact_page.php">Contact</a></li>
             <?php
                 if(isset($_SESSION['pseudo']) == "zoe.lavisse"){
