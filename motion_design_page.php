@@ -9,11 +9,15 @@
     include('includes/header.php');
   ?>
     <div id="main-motion-design" class="main-content">
+      <div class="page-title">
+        <h1>Motion design</h1>
+        <span></span>
+      </div>
       <div id="cards-motion-design" class="cards">
 
         <?php
 
-        $q = 'SELECT id, title, image, page_name FROM project';
+        $q = 'SELECT title, image, page_name FROM project';
         $req = $bdd->query($q);
         if($req !== false) {
             $projects = $req->fetchALL(PDO::FETCH_ASSOC);
