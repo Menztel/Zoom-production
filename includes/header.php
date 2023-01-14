@@ -4,7 +4,7 @@
             <div id="openMenu"><i class="fa fa-bars"></i></div>
             <ul id="mainMenu">
 
-            <li><a href="">À propos</a></li>
+            
             <div id="drop">
 
             <p class="dropbtn">Projets</p>
@@ -19,7 +19,7 @@
             </div>
 
             
-
+            <li><a href="">À propos</a></li>
             
             <li><a href="contact_page.php">Contact</a></li>
             <?php
