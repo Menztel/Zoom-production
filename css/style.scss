@@ -314,8 +314,7 @@
     transition: 0.5s;
   }
 
-  #mainMenu #closeMenu,
-  .icons a:hover {
+  #mainMenu .icons a:hover {
     transform: scale(1) translateY(-15px);
   }
 
