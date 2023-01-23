@@ -275,10 +275,12 @@
       transition: 0.5s;
 }
      
-    .main-content .cards .box:hover {
+    .main-content .cards .box:hover 
+    {
       box-shadow: none;
       transform: scale(1.05);
     }
+
   
     .cards .box:hover .imgBox {
       transform: translate(-0.8rem, -0.4rem);
