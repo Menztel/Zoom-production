@@ -186,7 +186,7 @@ function deleteProject(el){
         if(request.readyState === 4) {
             if(request.responseText === 'deleted') {
                 element.remove();
-                textInformation.innerHTML = "Le projet a bien été supprimer de la base de données !";
+                textInformation.innerHTML = "Le projet a bien été supprimé de la base de données !";
             }
         }
     };
