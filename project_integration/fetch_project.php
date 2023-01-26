@@ -14,7 +14,7 @@
 
             
             foreach($projects as $project) {
-                echo '<div class="box-admin">';
+                echo '<div id="'. $project['title'] .'" class="box-admin">';
                 
                 // Optimisation (Changer le nom des pages pour mettre en minuscule)
 
