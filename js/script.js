@@ -116,6 +116,9 @@ $(document).ready(function(){
 // Fetch project id when clicked
 
 function fetchIdProject(clickedId){
+    console.log(clickedId)
+    const classes = document.getElementById(clickedId)
+   console.log(classes.classList)
     const parent = document.getElementById("main-container")
     
     // create full screen div to stop interaction
@@ -155,6 +158,7 @@ function fetchIdProject(clickedId){
     const deleteProject = document.createElement("button")
     deleteProject.innerHTML = "Supprimer"
     deleteProject.setAttribute("id","delete-project")
+    deleteProject.setAttribute("onclick","deleteProject" + '(' + clickedId + ')' )
 
     // add element in buttonDiv
     buttonDiv.appendChild(returnButton)
@@ -172,3 +176,21 @@ function fetchIdProject(clickedId){
      parent.appendChild(fullDiv)
     
 }
+
+
+function deleteProject(el){
+    const element = el // fetch the project div (faire attention différent de clickedId qui retourne l'id)
+    const idToDelete = el.id
+    console.log(element, idToDelete)
+    const request = new XMLHttpRequest();
+    request.open('GET', 'project_integration/delete_project.php?id=' + el );
+    request.onreadystatechange = function() {
+        if(request.readyState === 4) {
+            if(request.responseText === 'deleted') {
+                element.remove();
+            }
+        }
+    };
+    request.send();
+}
+

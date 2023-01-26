@@ -137,14 +137,14 @@
                         <?php
                         
                             $src = '';
-                            $q = 'SELECT title, image, page_name FROM project';
+                            $q = 'SELECT id, title, image, page_name FROM project';
                             $req = $bdd->query($q);
                             if($req !== false) {
                                 $projects = $req->fetchALL(PDO::FETCH_ASSOC);
 
                                 
                                 foreach($projects as $project) {
-                                    echo '<div id="'. $project['title'] .'" class="box-admin" onclick="fetchIdProject(this.id)">';
+                                    echo '<div id="'. $project['title'] .'" class="'."box-admin" . " " . $project['id'] .'" onclick="fetchIdProject(this.id)">';
                                     
                                     // Optimisation (Changer le nom des pages pour mettre en minuscule)
 
