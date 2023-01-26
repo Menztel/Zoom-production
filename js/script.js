@@ -116,9 +116,6 @@ $(document).ready(function(){
 // Fetch project id when clicked
 
 function fetchIdProject(clickedId){
-    console.log(clickedId)
-    const classes = document.getElementById(clickedId)
-   console.log(classes.classList)
     const parent = document.getElementById("main-container")
     
     // create full screen div to stop interaction
@@ -180,14 +177,16 @@ function fetchIdProject(clickedId){
 
 function deleteProject(el){
     const element = el // fetch the project div (faire attention différent de clickedId qui retourne l'id)
-    const idToDelete = el.id
-    console.log(element, idToDelete)
+    const id = document.getElementById(el.id)
+    const idToDelete = id.classList[1] // list all classes
+    const textInformation = document.getElementById("text-information")
     const request = new XMLHttpRequest();
-    request.open('GET', 'project_integration/delete_project.php?id=' + el );
+    request.open('GET', 'project_integration/delete_project.php?id=' + idToDelete );
     request.onreadystatechange = function() {
         if(request.readyState === 4) {
             if(request.responseText === 'deleted') {
                 element.remove();
+                textInformation.innerHTML = "Le projet a bien été supprimer de la base de données !";
             }
         }
     };
