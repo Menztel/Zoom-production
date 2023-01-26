@@ -144,7 +144,10 @@
 
                                 
                                 foreach($projects as $project) {
-                                    echo '<div id="'. $project['title'] .'" class="'."box-admin" . " " . $project['id'] .'" onclick="fetchIdProject(this.id)">';
+                                    
+                                    //replace all space in the string by ''
+                                    $newId = str_replace(' ', '', $project['title']);
+                                    echo '<div id="'. $newId .'" class="'."box-admin" . " " . $project['id'] .'" onclick="fetchIdProject(this.id)">';
                                     
                                     // Optimisation (Changer le nom des pages pour mettre en minuscule)
 
