@@ -144,7 +144,7 @@
 
                                 
                                 foreach($projects as $project) {
-                                    echo '<div id="'. $project['title'] .'" class="box-admin">';
+                                    echo '<div id="'. $project['title'] .'" class="box-admin" onclick="fetchIdProject(this.id)">';
                                     
                                     // Optimisation (Changer le nom des pages pour mettre en minuscule)
 

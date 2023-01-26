@@ -113,3 +113,62 @@ $(document).ready(function(){
     });
 });
 
+// Fetch project id when clicked
+
+function fetchIdProject(clickedId){
+    const parent = document.getElementById("main-container")
+    
+    // create full screen div to stop interaction
+    const fullDiv = document.createElement("div")
+    fullDiv.setAttribute("id","popup")
+
+
+    // create div
+    const div = document.createElement("div")
+    div.setAttribute("id","delete-popup")
+
+    // create header text div
+    const headerText = document.createElement("p")
+    headerText.innerHTML = "Supprimer un projet"
+    headerText.setAttribute("id","header-text")
+
+    // create text area for information
+
+    const textInformation = document.createElement("p")
+    textInformation.innerHTML = "Es-tu sûr de vouloir supprimer " + clickedId + " ?"
+    textInformation.setAttribute("id","text-information")
+
+    // create div to store buttons
+    const buttonDiv = document.createElement("div")
+    buttonDiv.setAttribute("id","button-div")
+
+    // create button to delete the popup
+    const returnButton = document.createElement("button")
+    returnButton.innerHTML = "Quitter"
+    returnButton.setAttribute("id","return-back")
+    returnButton.addEventListener("click", () => {
+        fullDiv.remove()
+        div.remove()
+    })
+
+    // create button to delete the project
+    const deleteProject = document.createElement("button")
+    deleteProject.innerHTML = "Supprimer"
+    deleteProject.setAttribute("id","delete-project")
+
+    // add element in buttonDiv
+    buttonDiv.appendChild(returnButton)
+    buttonDiv.appendChild(deleteProject)
+
+    // add elements into div
+    div.appendChild(headerText)
+    div.appendChild(textInformation)
+    div.appendChild(buttonDiv)
+
+    // add div in delete-container
+    fullDiv.appendChild(div)
+
+     // add fullDiv into parent
+     parent.appendChild(fullDiv)
+    
+}
