@@ -180,6 +180,9 @@ function deleteProject(el){
     const id = document.getElementById(el.id)
     const idToDelete = id.classList[1] // list all classes
     const textInformation = document.getElementById("text-information")
+    const deleteButton = document.getElementById("delete-project")
+
+    // XMLHttpRequest to delete the clicked project
     const request = new XMLHttpRequest();
     request.open('GET', 'project_integration/delete_project.php?id=' + idToDelete );
     request.onreadystatechange = function() {
@@ -187,6 +190,7 @@ function deleteProject(el){
             if(request.responseText === 'deleted') {
                 element.remove();
                 textInformation.innerHTML = "Le projet a bien été supprimé de la base de données !";
+                deleteButton.style.visibility = "hidden";
             }
         }
     };

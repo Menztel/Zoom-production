@@ -78,7 +78,6 @@ include('../includes/bdd.php');
         // Insert new project into project TABLE
             $title = $_POST['project-title'];
             $pageName = $_POST['page-name-project'];
-            var_dump(($pageName));
 
             $q = 'INSERT INTO project (title, image, page_name) VALUES (:title, :image, :page_name)';
             $statement = $bdd->prepare($q);
@@ -91,7 +90,7 @@ include('../includes/bdd.php');
                 ]);
 
                 if($result == true) {
-                    echo "inserted";
+                    header('location: ../admin_page.php?alert="Projet inséré !"');
                 }
                 else {echo "failed";}
             }

@@ -125,7 +125,7 @@ include('../includes/bdd.php');
                 ]);
             }
 
-            //header('location: ../admin_page.php');
+            header('location: ../admin_page.php');
             
         };
       
