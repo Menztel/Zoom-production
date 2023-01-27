@@ -52,7 +52,6 @@ function toggleSidebar()
 const menuLinks = document.getElementById('menu');
 const dashButton = menuLinks.children[0];
 const addButton = menuLinks.children[1];
-const modifButton = menuLinks.children[2];
 const deleteButton = menuLinks.lastElementChild.firstElementChild;
 
 const mainContainer = document.getElementById('main-container');
@@ -71,22 +70,20 @@ dashButton.addEventListener('click', () => {
 });
 
 addButton.addEventListener('click', () => {
+    mainContainer.style.gap = '4rem';
     mainText.style.display = 'none';
     project.style.display = 'flex';
     annexe.style.display = 'flex';
+    deleteContainer.style.display = 'none';
 });
 
-modifButton.addEventListener('click', () => {
-    mainText.style.display = 'none';
-    project.style.display = 'none';
-    annexe.style.display = 'none';
-    modif.style.display = 'flex';
-});
 
 
 deleteButton.addEventListener('click', () => {
     mainContainer.style.gap = '0';
     mainText.style.display = 'none';
+    project.style.display = 'none';
+    annexe.style.display = 'none';
     deleteContainer.style.display = 'flex';
 })
 
