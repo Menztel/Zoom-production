@@ -207,14 +207,6 @@
 
             </div>
 
-
-            <div id="right-container">
-                <div id="profil-content">
-                    <img src="assets/avatar.png" alt="avatar">
-                    <p>Zoe Lavisse</p>
-                    <p>Graphiste</p>
-                </div>
-            </div>
     
         </div>
      </body>
