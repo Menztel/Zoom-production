@@ -54,37 +54,30 @@ const dashButton = menuLinks.children[0];
 const addButton = menuLinks.children[1];
 const deleteButton = menuLinks.lastElementChild.firstElementChild;
 
-const mainContainer = document.getElementById('main-container');
+const addContainer = document.getElementById('add-container');
 const mainText = document.getElementById('main-text');
-const project = document.getElementById('project');
-const annexe = document.getElementById('annexe');
 const modif = document.getElementById('modif-container');
 const deleteContainer = document.getElementById('delete');
 
 
 dashButton.addEventListener('click', () => {
-    mainText.style.display = 'flex';
-    project.style.display = 'none';
-    annexe.style.display = 'none';
-    deleteContainer.style.display = 'none';
+    mainText.style.display = "flex"
+    addContainer.style.display = "none"
+    deleteContainer.style.display = "none"
 });
 
 addButton.addEventListener('click', () => {
-    mainContainer.style.gap = '4rem';
-    mainText.style.display = 'none';
-    project.style.display = 'flex';
-    annexe.style.display = 'flex';
-    deleteContainer.style.display = 'none';
+    addContainer.style.display = "flex"
+    mainText.style.display = "none"
+    deleteContainer.style.display = "none"
 });
 
 
 
 deleteButton.addEventListener('click', () => {
-    mainContainer.style.gap = '0';
-    mainText.style.display = 'none';
-    project.style.display = 'none';
-    annexe.style.display = 'none';
-    deleteContainer.style.display = 'flex';
+    addContainer.style.display = "none"
+    mainText.style.display = "none"
+    deleteContainer.style.display = "flex"
 })
 
 
@@ -113,7 +106,7 @@ $(document).ready(function(){
 // Fetch project id when clicked
 
 function fetchIdProject(clickedId){
-    const parent = document.getElementById("main-container")
+    const parent = document.getElementById("delete")
     
     // create full screen div to stop interaction
     const fullDiv = document.createElement("div")
@@ -123,6 +116,11 @@ function fetchIdProject(clickedId){
     // create div
     const div = document.createElement("div")
     div.setAttribute("id","delete-popup")
+
+    // create text-container
+    const textContainer = document.createElement("div")
+    textContainer.setAttribute("id", "text-container")
+
 
     // create header text div
     const headerText = document.createElement("p")
@@ -158,9 +156,12 @@ function fetchIdProject(clickedId){
     buttonDiv.appendChild(returnButton)
     buttonDiv.appendChild(deleteProject)
 
+    // add headerText & textInformation into text-container
+    textContainer.appendChild(headerText)
+    textContainer.appendChild(textInformation)
+
     // add elements into div
-    div.appendChild(headerText)
-    div.appendChild(textInformation)
+    div.appendChild(textContainer)
     div.appendChild(buttonDiv)
 
     // add div in delete-container

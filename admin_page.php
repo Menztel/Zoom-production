@@ -14,50 +14,62 @@
     
         <div id="dashboard">
 
-            <div id="left-container">
-                <img src="logo_zoom.svg" alt="logo Zoom">
-                
-
-                <div id="menu">
-                    
-                    <button class="link">
-                        <img src="images/icons/dashboard-icon.svg" alt="dashboard">
-                        Dashboard
-                    </button>    
-
-                    <button class="link">
-                        <img src="images/icons/add-icon.svg" alt="add">
-                        Ajouter
-                    </button>
-                
-                    
-
-                    <div id="delete-section">
-                        <button>
-                            <img src="images/icons/delete-icon.svg" alt="delete"> 
-                        Supprimer
-                        </button>
-
-                        <select name="page-name-project" id="filter-page">
-                            <option value="Photographie">Photographie</option>
-                            <option value="Motion design">Motion design</option>
-                            <option value="Illustration">Illustration</option>
-                            <option value="Édition">Édition</option>
-                            <option value="Évènementiel">Évènementiel</option>
-                        </select>
-                    </div>
-
+            <div id="top-container">
+               
+                <div id="logo-dashboard">
+                    <img src="logo_zoom.svg" alt="logo Zoom">
                 </div>
-
-                <a href="includes/deconnexion.php">
-                    <img src="images/icons/logout-icon.svg" alt="log out">
-                    Déconnexion
-                </a>
+               
+                <div id="profil-container">
+                    <img src="assets/avatar.png" alt="profil picture">
+                </div>
 
             </div>
 
+            <div id="menu-container">
+                
+                <aside id="left-container">
+                    
+                    
 
-            <div id="main-container">
+                    <div id="menu">
+                        
+                        <button class="link">
+                            <img src="images/icons/dashboard-icon.svg" alt="dashboard">
+                            Dashboard
+                        </button>    
+
+                        <button class="link">
+                            <img src="images/icons/add-icon.svg" alt="add">
+                            Ajouter
+                        </button>
+                    
+                        
+
+                        <div id="delete-section">
+                            <button>
+                                <img src="images/icons/delete-icon.svg" alt="delete"> 
+                            Supprimer
+                            </button>
+
+                            <select name="page-name-project" id="filter-page">
+                                <option value="Photographie">Photographie</option>
+                                <option value="Motion design">Motion design</option>
+                                <option value="Illustration">Illustration</option>
+                                <option value="Édition">Édition</option>
+                                <option value="Évènementiel">Évènementiel</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <a href="includes/deconnexion.php">
+                        <img src="images/icons/logout-icon.svg" alt="log out">
+                        Déconnexion
+                    </a>
+
+                </aside>
+
 
                 <div id="main-text">
                     <h2>Bienvenue Zoe !</h2>
@@ -65,69 +77,70 @@
                     <p>N'hésite pas à me contacter si tu es perdue après tout, tu es la soeur de Heidi donc je me méfie ;)</p>
                     <p>Je vais te préparer un moyen de me contacter directement de ce dashboard par mail (plus tard)</p>
                 </div>
-                
-                <div id="project">
-                    
-                    <p>Ajouter un projet</p>
-                    
-                    <form id="add-form" action="project_integration/create_project.php" method="POST" enctype="multipart/form-data">
-                        <input type="text" name="project-title">
-                        <select name="page-name-project" id="select-page">
-                            <option value="Photographie">Photographie</option>
-                            <option value="Motion design">Motion design</option>
-                            <option value="Illustration">Illustration</option>
-                            <option value="Édition">Édition</option>
-                            <option value="Évènementiel">Évènementiel</option>
-                        </select>
-                        <input type="file" name="project-image" id="file">
-                        <button type="submit" name="addForm-button">Envoyer</button>
-                    </form>
-                   
-                </div>
+            
+                <div id="add-container">
 
-                <div id="annexe">
-
-                    <p>Ajouter une annexe</p>
-                    <form action="project_integration/create_annexe.php" method="POST" enctype="multipart/form-data">
-
-                    <?php
-                    
-                        include('includes/bdd.php');
-
-                        $q = 'SELECT title FROM project';
-                        $statement = $bdd->query($q);
+                    <div id="project">
                         
-
-                        if($statement){
-                            
-                            $projectsTitle = $statement->fetchALL(PDO::FETCH_ASSOC);
-                            
-                            echo '<select name="project-name-annexe">';
-
-                                foreach($projectsTitle as $title){
+                        <p>Ajouter un projet</p>
                         
-                                     echo '<option value="' . $title['title'] . '">' . $title['title'] . '</option>';  
-                                    };  
-
-                            echo '</select>';
-                                  
-                            };
+                        <form id="add-form" action="project_integration/create_project.php" method="POST" enctype="multipart/form-data">
+                            <input type="text" name="project-title">
+                            <select name="page-name-project" id="select-page">
+                                <option value="Photographie">Photographie</option>
+                                <option value="Motion design">Motion design</option>
+                                <option value="Illustration">Illustration</option>
+                                <option value="Édition">Édition</option>
+                                <option value="Évènementiel">Évènementiel</option>
+                            </select>
+                            <input type="file" name="project-image" id="file">
+                            <button type="submit" name="addForm-button">Envoyer</button>
+                        </form>
                     
-                    ?>
+                    </div>
 
-                    <input type="text" name="subtitle" placeholder="sous-titre">
-                    <textarea name="description" id="" cols="30" rows="10"></textarea>
-                    <input type="file" name="uploads[]" id="multi-file" multiple>
-                    <!--<label for="multi-file">Choisi plusieurs images</label>-->
-                    <button type="submit" name="add-annexe">Envoyer</button>
-                    </form>
-                    
-                
-                </div>
+                    <div id="annexe">
 
-                <div id="modif-container">
+                        <p>Ajouter une annexe</p>
+                        <form action="project_integration/create_annexe.php" method="POST" enctype="multipart/form-data">
+
+                        <?php
+                        
+                            include('includes/bdd.php');
+
+                            $q = 'SELECT title FROM project';
+                            $statement = $bdd->query($q);
                             
+
+                            if($statement){
+                                
+                                $projectsTitle = $statement->fetchALL(PDO::FETCH_ASSOC);
+                                
+                                echo '<select name="project-name-annexe">';
+
+                                    foreach($projectsTitle as $title){
+                            
+                                        echo '<option value="' . $title['title'] . '">' . $title['title'] . '</option>';  
+                                        };  
+
+                                echo '</select>';
+                                    
+                                };
+                        
+                        ?>
+
+                        <input type="text" name="subtitle" placeholder="sous-titre">
+                        <textarea name="description" id="" cols="30" rows="10"></textarea>
+                        <input type="file" name="uploads[]" id="multi-file" multiple>
+                        <!--<label for="multi-file">Choisi plusieurs images</label>-->
+                        <button type="submit" name="add-annexe">Envoyer</button>
+                        </form>
+                        
+                    
+                    </div>
+
                 </div>
+                
                 
                 <div id="delete">
                 
@@ -203,9 +216,9 @@
                     </div>
 
                 </div>
-                
-
+                    
             </div>
+            
 
     
         </div>
