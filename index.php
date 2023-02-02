@@ -2,6 +2,7 @@
 <html lang="en">
 
     <?php
+        $title = "Page d'accueil";
         include('includes/head.php');
     ?>
 

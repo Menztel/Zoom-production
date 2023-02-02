@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+$title = "Page Édition";
   include('includes/head.php');
   include('includes/bdd.php');
 ?>

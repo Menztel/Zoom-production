@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php
+$title = "Page photographie";
   include('includes/head.php');
   include('includes/bdd.php');
 ?>

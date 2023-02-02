@@ -1,6 +1,7 @@
 <!DOCTYPE html>
     <html>
         <?php
+        $title = "Page contact";
             include('includes/head.php');
         ?>
 
