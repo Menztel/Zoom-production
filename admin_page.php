@@ -105,7 +105,7 @@
                                 </div>    
                                 
                                 <!--<label class="send-file" for="multi-file"><i><img src="images/icons/file-import.svg" alt="import files icon"></i>Upload image</label>-->
-                                <input type="file" name="project-image" id="file">
+                                <input class="send-image" type="file" name="project-image">
                                 <div id="send">
                                 <button type="submit" name="addForm-button">Envoyer</button>
                                 </div>
@@ -158,7 +158,7 @@
                             <textarea name="description" id="" cols="30" rows="8" placeholder="écrire la description de l'annexe..."></textarea>
                         </div>
                         
-                        <input type="file" name="uploads[]" id="multi-file" multiple>
+                        <input class="send-image" type="file" name="uploads[]" id="multi-file" multiple>
                         <!--<label class="send-file" for="multi-file"><i><img src="images/icons/file-import.svg" alt="import files icon"></i>Upload image</label>-->
                         <div id="send-annexe"><button type="submit" name="add-annexe">Envoyer</button></div>
                         

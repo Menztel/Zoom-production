@@ -1303,10 +1303,31 @@
   }
 
 
-  #file
+  .send-image::-webkit-file-upload-button
   {
-    
+    visibility: hidden;
   }
+
+  .send-image::before
+  {
+  content: 'Choisir une image';
+  color: black;
+  display: inline-block;
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+
+  }
+
+  .send-image:hover::before{border-color: black;}
+
+  .send-image{color: transparent;}
+
+  .send-image:active{outline: 0;}
 
   #send
   {
