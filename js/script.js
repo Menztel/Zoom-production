@@ -49,15 +49,16 @@ function toggleSidebar()
 
 // display forms
 
-const menuLinks = document.getElementById('menu');
-const dashButton = menuLinks.children[0];
-const addButton = menuLinks.children[1];
-const deleteButton = menuLinks.lastElementChild.firstElementChild;
-
-const addContainer = document.getElementById('add-container');
-const mainText = document.getElementById('main-text');
-const modif = document.getElementById('modif-container');
-const deleteContainer = document.getElementById('delete');
+const menuLinks = document.getElementById('menu')
+const dashButton = menuLinks.children[0]
+const addButton = menuLinks.children[1]
+const deleteButton = menuLinks.lastElementChild.firstElementChild
+const addContainer = document.getElementById('add-container')
+const projectFile = document.getElementById("file")
+const annexeFiles = document.getElementById("multi-file")
+const mainText = document.getElementById('main-text')
+const modif = document.getElementById('modif-container')
+const deleteContainer = document.getElementById('delete')
 
 
 dashButton.addEventListener('click', () => {
@@ -70,6 +71,8 @@ addButton.addEventListener('click', () => {
     addContainer.style.display = "flex"
     mainText.style.display = "none"
     deleteContainer.style.display = "none"
+    projectFile.style.display = "none"
+    annexeFiles.style.display = "none"
 });
 
 
@@ -106,8 +109,13 @@ $(document).ready(function(){
 // Fetch project id when clicked
 
 function fetchIdProject(clickedId){
+    const body = document.getElementById("dash-body")
     const parent = document.getElementById("delete")
     
+    const fullDark = document.createElement("div")
+    fullDark.setAttribute("id", "full-dark-container")
+    body.append(fullDark)
+
     // create full screen div to stop interaction
     const fullDiv = document.createElement("div")
     fullDiv.setAttribute("id","popup")
@@ -142,6 +150,7 @@ function fetchIdProject(clickedId){
     returnButton.innerHTML = "Quitter"
     returnButton.setAttribute("id","return-back")
     returnButton.addEventListener("click", () => {
+        fullDark.remove()
         fullDiv.remove()
         div.remove()
     })

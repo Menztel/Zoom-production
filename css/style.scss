@@ -933,6 +933,7 @@
 
   #dashboard
   {
+    position: absolute;
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -958,11 +959,12 @@
 
   #logo-dashboard
   {
-    width: 230px;
-    height: 100px;
+    width: 200px;
+    height: 95px;
     display: flex;
     align-items: center;
     background-color: #fff;
+    border: none;
   }
 
   #logo-dashboard > img
@@ -1154,6 +1156,7 @@
 
   #main-text
   {
+    width: 100%;
     padding-top: 4rem;
     padding-left: 2rem;
     display: flex;
@@ -1178,50 +1181,78 @@
   padding-top: 4rem;
   display: none;
   justify-content: center;
-  gap: 100px;
+  gap: 2.5em;
   background-color: #f9fafb;
  }
 
   /*  PROJECT */
 
-  #project
+
+  #project-container
   {
-    width: 250px;
-    height: 300px;
+    width: 500px;
+    height: 310px;
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    border: 1px solid;
-    border-radius: 10px;
-    background-color: #FBF7F4;
-
+    gap: 2rem;
+    font-size: 14px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   }
 
-  #project p
+  #info-project
   {
-    font-size: 1.5em;
+    padding-bottom: 0.5rem;
+    font-family: "Roboto Slab";
+    font-size: 1.4rem;
+    border-bottom: 2px solid #000;
+
   }
 
+  #project
+  {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: 8px;
+    
+
+  }
 
   #add-form
   {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 1.5rem;
   }
 
-  #add-form > input
+
+  #add-form > input:nth-child(1)
   {
-    width: 200px;
-    height: 25px;
+    height: 30px;
+    padding-left: 5px;
+    font-size: 16px;
+    border: 1px solid #cacaca;
+    border-radius: 4px;
+    background : #f9fafb;
   }
+
+  #add-form > input:nth-child(1)::placeholder
+  {
+    color: #9c9fa1;
+  }
+
 
   #add-form select
   {
-    width: 200pxF;
+    height: 30px;
+    padding-left: 5px;
+    font-size: 16px;
+    border: 1px solid #cacaca;
+    border-radius: 4px;
+    background : #f9fafb;
   }
 
 
@@ -1230,28 +1261,143 @@
     
   }
 
+  #send
+  {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #send > button
+  {
+    width: 80px;
+    height: 30px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto Regular";
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    background: #000;
+  }
+
   /*  PROJECT ANNEXE  */
 
   #annexe
   {
-    height: 400px;
+    width: 500px;
+    height: 490px;
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    border: 1px solid;
-    border-radius: 10px;
-    background-color: #FBF7F4;
+    gap: 2rem;
+    font-size: 14px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  }
+
+  #annexe > p
+  {
+    padding-bottom: 0.5rem;
+    font-family: "Roboto Slab";
+    font-size: 1.4rem;
+    border-bottom: 2px solid #000;
   }
 
   #annexe form
   {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
+  #annexe form > select
+  {
+    height: 30px;
+    padding-left: 5px;
+    font-size: 16px;
+    border: 1px solid #cacaca;
+    border-radius: 4px;
+    background : #f9fafb;
+  }
+
+  #annexe form input:nth-child(2)
+  {
+    height: 30px;
+    padding-left: 5px;
+    font-size: 16px;
+    border: 1px solid #cacaca;
+    border-radius: 4px;
+    background : #f9fafb;
+  }
+
+  #annexe form input:nth-child(2)::placeholder
+  {
+    color: #9c9fa1;
+  }
+
+  #annexe form textarea
+  {
+    padding-top: 5px;
+    padding-left: 5px;
+    font-size: 16px;
+    border: 1px solid #cacaca;
+    border-radius: 4px;
+    background : #f9fafb;
+  }
+  
+  #annexe form textarea::placeholder
+  {
+    color: #9c9fa1;
+  }
+
+  .send-file
+  {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 15px;
+
+  }
+
+  .send-file:hover
+  {
+    cursor: pointer;
+  }
+
+  
+
+  .send-file i img
+  {
+    width: 30px;
+    height: 30px;
+  }
+  
+
+  #send-annexe
+  {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #send-annexe button
+  {
+    width: 80px;
+    height: 30px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto Regular";
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    background: #000;
+  }
 
 
   /*  MODIF CONTAINER*/
@@ -1286,17 +1432,23 @@
     gap: 3rem;
   }
 
+  #full-dark-container
+  {
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #00000067;
+  }
 
   #popup
   {
     position: absolute;
     width: calc(100% - 230px);
     min-height: calc(100vh - 90px - 4rem);
-    padding-top: 2rem;
+    padding-top: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(0,0,0,0.4);
     z-index: 4;
   }
 

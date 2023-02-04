@@ -10,7 +10,7 @@
             include("includes/head.php");
         ?>
 
-    <body>
+    <body id="dash-body">
     
         <div id="dashboard">
 
@@ -80,24 +80,30 @@
             
                 <div id="add-container">
 
-                    <div id="project">
+                    <div id="project-container">
+                            <p id="info-project">Créer un projet</p>
+                            <div id="project">
                         
-                        <p>Ajouter un projet</p>
-                        
-                        <form id="add-form" action="project_integration/create_project.php" method="POST" enctype="multipart/form-data">
-                            <input type="text" name="project-title">
-                            <select name="page-name-project" id="select-page">
-                                <option value="Photographie">Photographie</option>
-                                <option value="Motion design">Motion design</option>
-                                <option value="Illustration">Illustration</option>
-                                <option value="Édition">Édition</option>
-                                <option value="Évènementiel">Évènementiel</option>
-                            </select>
-                            <input type="file" name="project-image" id="file">
-                            <button type="submit" name="addForm-button">Envoyer</button>
-                        </form>
+                            <form id="add-form" action="project_integration/create_project.php" method="POST" enctype="multipart/form-data">
+                                <input type="text" name="project-title" placeholder="Nom du projet">
+                                <select name="page-name-project" id="select-page">
+                                    <option value="Photographie">Photographie</option>
+                                    <option value="Motion design">Motion design</option>
+                                    <option value="Illustration">Illustration</option>
+                                    <option value="Édition">Édition</option>
+                                    <option value="Évènementiel">Évènementiel</option>
+                                </select>
+                                <label class="send-file" for="multi-file"><i><img src="images/icons/file-import.svg" alt="import files icon"></i>Upload image</label>
+                                <input type="file" name="project-image" id="file">
+                                <div id="send">
+                                <button type="submit" name="addForm-button">Envoyer</button>
+                                </div>
+                                
+                            </form>
                     
+                            </div>
                     </div>
+                    
 
                     <div id="annexe">
 
@@ -130,10 +136,11 @@
                         ?>
 
                         <input type="text" name="subtitle" placeholder="sous-titre">
-                        <textarea name="description" id="" cols="30" rows="10"></textarea>
+                        <textarea name="description" id="" cols="30" rows="8" placeholder="Écrire la description de l'annexe..."></textarea>
                         <input type="file" name="uploads[]" id="multi-file" multiple>
-                        <!--<label for="multi-file">Choisi plusieurs images</label>-->
-                        <button type="submit" name="add-annexe">Envoyer</button>
+                        <label class="send-file" for="multi-file"><i><img src="images/icons/file-import.svg" alt="import files icon"></i>Upload image</label>
+                        <div id="send-annexe"><button type="submit" name="add-annexe">Envoyer</button></div>
+                        
                         </form>
                         
                     
