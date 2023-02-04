@@ -947,6 +947,12 @@
     border-radius: 8px;
   }
 
+  #message:hover
+  {
+    cursor: pointer;
+    background-color: #85ac75;
+  }
+
   .alert-valid
   {
     background-color: #96b38a;
@@ -1473,6 +1479,7 @@
   #delete
   {
     width: 100%;
+    height: 100vh;
     padding-top: 4rem;
     display: none;
     flex-direction: column;

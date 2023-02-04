@@ -59,7 +59,14 @@ const annexeFiles = document.getElementById("multi-file")
 const mainText = document.getElementById('main-text')
 const modif = document.getElementById('modif-container')
 const deleteContainer = document.getElementById('delete')
+const messageBox = document.getElementById("message")
 
+
+
+messageBox.addEventListener('click', () => {
+    messageBox.style.display = "none"
+    messageBox.remove()
+})
 
 dashButton.addEventListener('click', () => {
     mainText.style.display = "flex"
@@ -79,6 +86,7 @@ deleteButton.addEventListener('click', () => {
     addContainer.style.display = "none"
     mainText.style.display = "none"
     deleteContainer.style.display = "flex"
+    deleteContainer.scrollIntoView();
 })
 
 
