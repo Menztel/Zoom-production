@@ -91,11 +91,16 @@ include('../includes/bdd.php');
 
                 if($result == true) {
                     header('location: ../admin_page.php?message=Projet inséré !&type=valid');
+                    exit;
                 }
-                else {header('location: ../admin_page.php?message=Erreur insertion !&type=error');}
+                else {
+                    header('location: ../admin_page.php?message=Erreur insertion !&type=error');
+                    exit;
+                }
             }
             else {
                 echo "Erreur de préparation de la requête";
+                exit;
             };
     }
 
