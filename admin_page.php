@@ -11,8 +11,12 @@
         ?>
 
     <body id="dash-body">
-    
+        
         <div id="dashboard">
+
+            <?php
+                include("includes/message.php");
+            ?>
 
             <div id="top-container">
                
@@ -85,15 +89,22 @@
                             <div id="project">
                         
                             <form id="add-form" action="project_integration/create_project.php" method="POST" enctype="multipart/form-data">
-                                <input type="text" name="project-title" placeholder="Nom du projet">
-                                <select name="page-name-project" id="select-page">
-                                    <option value="Photographie">Photographie</option>
-                                    <option value="Motion design">Motion design</option>
-                                    <option value="Illustration">Illustration</option>
-                                    <option value="Édition">Édition</option>
-                                    <option value="Évènementiel">Évènementiel</option>
-                                </select>
-                                <label class="send-file" for="multi-file"><i><img src="images/icons/file-import.svg" alt="import files icon"></i>Upload image</label>
+                                <div id="project-name">
+                                    <p>Nom</p>
+                                    <input type="text" name="project-title" placeholder="projet">
+                                </div>
+                                <div id="page-name">
+                                    <p>Choisir une page :</p>
+                                    <select name="page-name-project" id="select-page">
+                                        <option value="Photographie">Photographie</option>
+                                        <option value="Motion design">Motion design</option>
+                                        <option value="Illustration">Illustration</option>
+                                        <option value="Édition">Édition</option>
+                                        <option value="Évènementiel">Évènementiel</option>
+                                    </select>
+                                </div>    
+                                
+                                <!--<label class="send-file" for="multi-file"><i><img src="images/icons/file-import.svg" alt="import files icon"></i>Upload image</label>-->
                                 <input type="file" name="project-image" id="file">
                                 <div id="send">
                                 <button type="submit" name="addForm-button">Envoyer</button>
@@ -109,36 +120,46 @@
 
                         <p>Ajouter une annexe</p>
                         <form action="project_integration/create_annexe.php" method="POST" enctype="multipart/form-data">
-
-                        <?php
-                        
-                            include('includes/bdd.php');
-
-                            $q = 'SELECT title FROM project';
-                            $statement = $bdd->query($q);
+                        <div id="project-fetch">
+                            <p>Nom Projet</p>
+                            <?php
                             
+                                include('includes/bdd.php');
 
-                            if($statement){
+                                $q = 'SELECT title FROM project';
+                                $statement = $bdd->query($q);
                                 
-                                $projectsTitle = $statement->fetchALL(PDO::FETCH_ASSOC);
-                                
-                                echo '<select name="project-name-annexe">';
 
-                                    foreach($projectsTitle as $title){
-                            
-                                        echo '<option value="' . $title['title'] . '">' . $title['title'] . '</option>';  
-                                        };  
-
-                                echo '</select>';
+                                if($statement){
                                     
-                                };
-                        
-                        ?>
+                                    $projectsTitle = $statement->fetchALL(PDO::FETCH_ASSOC);
+                                    
+                                    echo '<select name="project-name-annexe">';
 
-                        <input type="text" name="subtitle" placeholder="sous-titre">
-                        <textarea name="description" id="" cols="30" rows="8" placeholder="Écrire la description de l'annexe..."></textarea>
+                                        foreach($projectsTitle as $title){
+                                
+                                            echo '<option value="' . $title['title'] . '">' . $title['title'] . '</option>';  
+                                            };  
+
+                                    echo '</select>';
+                                        
+                                    };
+                            
+                            ?>
+                        </div>
+                        
+                        <div id="subtitle-container">
+                            <p>Sous-titre Projet</p>
+                            <input type="text" name="subtitle" placeholder="sous-titre">
+                        </div>
+                        
+                        <div id="textarea-container">
+                            <p>Description :</p>
+                            <textarea name="description" id="" cols="30" rows="8" placeholder="écrire la description de l'annexe..."></textarea>
+                        </div>
+                        
                         <input type="file" name="uploads[]" id="multi-file" multiple>
-                        <label class="send-file" for="multi-file"><i><img src="images/icons/file-import.svg" alt="import files icon"></i>Upload image</label>
+                        <!--<label class="send-file" for="multi-file"><i><img src="images/icons/file-import.svg" alt="import files icon"></i>Upload image</label>-->
                         <div id="send-annexe"><button type="submit" name="add-annexe">Envoyer</button></div>
                         
                         </form>

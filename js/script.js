@@ -71,8 +71,6 @@ addButton.addEventListener('click', () => {
     addContainer.style.display = "flex"
     mainText.style.display = "none"
     deleteContainer.style.display = "none"
-    projectFile.style.display = "none"
-    annexeFiles.style.display = "none"
 });
 
 

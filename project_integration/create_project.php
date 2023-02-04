@@ -13,10 +13,10 @@ include('../includes/bdd.php');
 		
 	];
     
-    
+    var_dump($_FILES['project-image']['type']);
 
 	if (!in_array($_FILES['project-image']['type'], $acceptable)){
-		echo 'Format incorrecte';
+		header('location: ../admin_page.php?message=Erreur mauvais format image !&type=error');
 		exit;
 	}
     
@@ -90,9 +90,9 @@ include('../includes/bdd.php');
                 ]);
 
                 if($result == true) {
-                    header('location: ../admin_page.php?alert="Projet inséré !"');
+                    header('location: ../admin_page.php?message=Projet inséré !&type=valid');
                 }
-                else {echo "failed";}
+                else {header('location: ../admin_page.php?message=Erreur insertion !&type=error');}
             }
             else {
                 echo "Erreur de préparation de la requête";
