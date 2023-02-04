@@ -61,12 +61,12 @@ const modif = document.getElementById('modif-container')
 const deleteContainer = document.getElementById('delete')
 const messageBox = document.getElementById("message")
 
-
-
-messageBox.addEventListener('click', () => {
+// Hide the alert message after inserted or error
+const time = setTimeout(hideMessage, 5000);
+function hideMessage(){
     messageBox.style.display = "none"
-    messageBox.remove()
-})
+}
+
 
 dashButton.addEventListener('click', () => {
     mainText.style.display = "flex"
