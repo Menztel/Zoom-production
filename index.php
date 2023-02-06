@@ -8,7 +8,7 @@
 
     <body>
         <header>
-            <nav class="nav_home">
+            <nav class="nav_home" id="nav">
                 <div class="logo"><a href="index.php"><img src="logo_zoom.svg" alt="logo_Zoom"></a></div>
                 <div class="openMenu"><i class="fa fa-bars"></i></div>
                 <ul class="mainMenu">

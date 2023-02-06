@@ -26,7 +26,7 @@ $title = "Page motion design";
 
             foreach($projects as $project) {
               if($project['page_name'] == "Motion design"){
-                echo '<div class="box">';
+                echo '<div id="box" class="box">';
                     echo '<div class="imgBox">' . '<img src="images/motion_design/' . $project['image'] . '">' . '</div>';
                     echo '<div class="voile">';
                     echo '<div class="overlay">' . '<span>' . $project['title']  . '</span>' . '</div>';
@@ -53,5 +53,6 @@ $title = "Page motion design";
 
 
 </body>
+<script src="js/script.js"></script>
 </html>
 

@@ -15,7 +15,7 @@
       margin: 0px;
       padding: 0px;
     }
- 
+    
   
     body {
       min-height: 100vh;
@@ -50,7 +50,7 @@
       justify-content: flex-end;
     }
     
-    .mainMenu {
+    #mainMenu {
       display: flex;
       list-style: none;
       height: 100vh;
@@ -71,7 +71,7 @@
       color: #fff;
     }*/
   
-    .mainMenu li a {
+    #mainMenu li a {
       display: inline-block;
       padding: 10px;
       font-family: "Roboto Slab";
@@ -80,14 +80,14 @@
       font-size: 22px;
       transition: 0.35s;
     }
-    .mainMenu li a:hover {
+    #mainMenu li a:hover {
       background: rgba(221, 220, 220, 0.329);
       font-weight: bolder;
       background: none;
       opacity: 2;
       transform: scale(1.2);
     }
-    .openMenu {
+   #openMenu {
       font-size: 2.5rem;
       margin: 20px;
       display: block;
@@ -95,11 +95,11 @@
       transition: transform 0.5s;
     }
   
-    .openMenu:hover {
+   #openMenu:hover {
       transform: scale(1.3);
     }
   
-    .mainMenu .closeMenu {
+    #mainMenu #closeMenu {
       display: block;
       position: absolute;
       top: 20px;
@@ -109,18 +109,19 @@
       transition: 0.5s;
     }
   
-    .mainMenu .closeMenu:hover {
+    #mainMenu #closeMenu:hover {
       transform: scale(1.3) translateY(5px);
     }
   
-    .closeMenu,
+
+    #mainMenu #closeMenu,
     .icons {
       display: flex;
       justify-content: center;
       margin-top: 1.5rem;
     }
 
-    .closeMenu,
+    #mainMenu #closeMenu,
     .icons a {
       height: 60px;
       width: 60px;
@@ -128,12 +129,12 @@
       transition: 0.5s;
     }
 
-    .closeMenu,
+    #mainMenu #closeMenu,
     .icons a:hover {
       transform: scale(1) translateY(-15px);
     }
   
-    .closeMenu,
+    #mainMenu #closeMenu,
     .icons a img {
       height: 60px;
       width: 60px;
@@ -273,7 +274,7 @@
     .main-content .cards .box {
       position: relative;
       transition: 0.5s;
-}
+    }
      
     .main-content .cards .box:hover 
     {
@@ -386,14 +387,6 @@
     
   }
 
-
-  /* POE 2 IMG */
-
-  #poe_2_img {
-    width: 50%;
-    height:0;
-    align-self: center;
-  }
 
   /* gallery-content */
   
@@ -525,104 +518,14 @@
   }
 */
   
-
-
-
-  /* PAGES ANNEXES */
   
-  .main-content-annexes {
-    min-height: calc(100vh - 81px - 201.59px);
-    margin: 1rem 2rem;
-  }
-
-
-  .hScroll {
-    position: absolute;
-    height: 100vw;
-    width: calc(100vh - 81px - 201.59px);;
-    padding: 20px;
-    margin-left: 15.8rem;
-    overflow: hidden auto;
-    transform-origin: right top;
-    transform: rotate(-90deg) translateY(-100vh);
-  }
-  
-  .hScroll_block {
-    margin-right: 6.5rem;
-    width: calc(100vh -25rem);
-    height: calc(100vh - 25rem);
-    transform-origin: left top;
-    transform: rotate(90deg) translateY(calc(-100vh + 20rem));
-    box-shadow: 0 3px 6px rgba(0,0,0, 0.19), 0 3px 6px rgba(0,0,0,0.23);
-  }
-
-  .hScroll_block:first-child {margin-top: 1.2rem;}
-  
-  
-
-  
-  
-
-  .hScroll_block:nth-child(1) .background_neon_body {
-    background: url(../images/annexes/neon_body/image_1.jpg);
-  }
-  
-  .hScroll_block:nth-child(2) .background_neon_body {
-    background: url(../images/annexes/neon_body/image_2.jpg);
-  }
-  
-  .hScroll_block:nth-child(3) .background_neon_body {
-    background: url(../images/annexes/neon_body/image_3.jpg);
-  }
-  
-  .hScroll_block:nth-child(4) .background_neon_body {
-    background: url(../images/annexes/neon_body/image_4.jpg);
-  }
-  
-  .hScroll_block:nth-child(5) .background_neon_body {
-    background: url(../images/annexes/neon_body/image_5.jpg);
-  }
-
-
-  /* ALIEN IMAGES */
-
-  .hScroll_block:nth-child(1) .background_alien{
-    background: url(../images/annexes/alien/image_1.jpg);
-  }
-  
-  .hScroll_block:nth-child(2) .background_alien {
-    background: url(../images/annexes/alien/image_2.jpg);
-  }
-  
-  .hScroll_block:nth-child(3) .background_alien {
-    background: url(../images/annexes/alien/image_3.jpg);
-  }
-  
-  .hScroll_block:nth-child(4) .background_alien {
-    background: url(../images/annexes/alien/image_4.jpg);
-  }
-  
-  .hScroll_block:nth-child(5) .background_alien {
-    background: url(../images/annexes/alien/image_5.jpg);
-  }
-
-  .hScroll_block:nth-child(6) .background_alien {
-    background: url(../images/annexes/alien/image_6.jpg);
-  }
-  
-  
-  
-  .hScroll .hScroll_block .background {
-    position: absolute;
-    top: 0; bottom: 0; right: 0; left: 0;
-    background-size: cover;
-    background-position: center center;
-    background-blend-mode: luminosity;
-  }
-
-  ::-webkit-scrollbar {
-    width: 0;
-    height: 0;
+  footer .copyright {
+    margin-top:15px;
+    text-align:center;
+    font-family: "Roboto Regular";
+    font-size:13px;
+    color:rgb(0, 0, 0);
+    margin-bottom:0;
   }
 
 
@@ -1060,6 +963,8 @@
   }
 
 
+   /*  LOGIN PAGE  */
+
   #login-form
   {
     height: 520px;
@@ -1139,3 +1044,771 @@
     color: #fff;
     background: #000;
   }
+  
+
+  /*  DASHBOARD */
+
+
+  #message
+  {
+    width: 50%;
+    height: 70px;
+    position: absolute;
+    left: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 15;
+    color: #fff;
+    border: 1px solid #b7bbc8;
+    border-radius: 8px;
+  }
+
+  #message:hover
+  {
+    cursor: pointer;
+    background-color: #85ac75;
+  }
+
+  .alert-valid
+  {
+    background-color: #96b38a;
+  }
+
+
+  .alert-error
+  {
+    background-color: #ff3c41;
+  }
+
+
+  #dashboard
+  {
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto Slab";
+    background-color: #fff;
+  }
+
+  /*  TOP CONTAINER  */
+
+  #top-container
+  {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    padding: 1rem;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  }
+
+  #logo-dashboard
+  {
+    width: 200px;
+    height: 95px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: none;
+  }
+
+  #logo-dashboard > img
+  {
+    width: 140px;
+    height: 50px;
+    padding-left: 1rem;
+  }
+
+  #profil-container
+  {
+
+  } 
+
+  #profil-container > img
+  {
+    width: 40px;
+    height: 40px;
+  }
+  /*  DASHBOARD CONTAINER */
+
+  #menu-container
+  {
+    width: 100%;
+    height: calc(100vh - 80px);
+    display: flex;
+  }
+
+  /*  LEFT CONTAINER  */
+
+  #left-container
+  {
+    width: 230px;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  
+   /*  LOG OUT */
+
+  #left-container > a
+  {
+    width: 165px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #000;
+    font-size: 1em;
+    text-decoration: none;
+    list-style: none;
+  }
+
+  #left-container > a:hover
+  {
+    background-color: #EEE6E3;
+  }
+
+  #left-container > a img
+  {
+    width: 20px;
+    height: 20px;
+  }
+  
+  
+
+  /*  MENU  */
+
+  #menu
+  {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+  }
+
+
+  .link
+  {
+    width: 165px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: "Roboto Slab";
+    font-size: 1em;
+    border: none;
+    background-color: #fff;
+    
+  }
+
+  .link:hover
+  {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+  .link > img
+  {
+    width: 20px;
+    height: 20px;
+  }
+
+  .link:nth-child(3) > img
+  {
+    width: 18px;
+    height: 18px;
+  }
+
+
+
+  /*  DELETE SECTION */
+
+  #delete-section
+  {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+
+  #delete-section > button
+  {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-align: left;
+    font-family: "Roboto Slab";
+    font-size: 1em;
+    border: none;
+    background-color: #fff;
+  }
+
+
+  #delete-section > button > img
+  {
+    width: 20px;
+    height: 20px;
+  }
+
+  #delete-section > button:hover
+  {
+    background-color: #EEE6E3;
+  }
+
+  #delete-section > select
+  {
+    height: 30px;
+    padding: 3px;
+    display: none;
+    flex-direction: column;
+    position:relative;
+    border: none;
+    font-family: "Roboto Slab";
+  }
+
+  #delete-section:hover > select
+  {
+    display:flex;
+  }
+
+  #delete-section > select:hover
+  {
+    cursor: pointer;
+    background-color: rgb(240, 240, 240);
+  
+  }
+
+  #delete-section > select option
+  {
+    
+  }
+  
+
+
+  
+
+
+
+  /*  MAIN TEXT*/
+
+  #main-text
+  {
+    width: 100%;
+    padding-top: 4rem;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: #f9fafb;
+  }
+
+  #main-text h2
+  {
+    margin-bottom: 2rem;
+  }
+
+
+
+ /* ADD CONTAINER */
+
+
+ #add-container
+ {
+  width: 100%;
+  padding-top: 4rem;
+  display: none;
+  justify-content: center;
+  gap: 2.5em;
+  background-color: #f9fafb;
+ }
+
+  /*  PROJECT */
+
+
+  #project-container
+  {
+    width: 500px;
+    height: 350px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 14px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  }
+
+  #info-project
+  {
+    padding-bottom: 0.5rem;
+    font-family: "Roboto Slab";
+    font-size: 1.4rem;
+    border-bottom: 2px solid #000;
+
+  }
+
+  #project
+  {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: 8px;
+    
+
+  }
+
+  #add-form
+  {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  #project-name
+  {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #project-name > input
+  {
+    height: 30px;
+    padding-left: 5px;
+    font-size: 16px;
+    border: 1px solid #cacaca;
+    border-radius: 4px;
+    background : #f9fafb;
+  }
+
+  #project-name > input::placeholder
+  {
+    color: #9c9fa1;
+  }
+
+
+  #page-name
+  {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+
+  #page-name select
+  {
+    height: 30px;
+    padding-left: 5px;
+    font-size: 16px;
+    border: 1px solid #cacaca;
+    border-radius: 4px;
+    background : #f9fafb;
+  }
+
+
+  .send-image::-webkit-file-upload-button
+  {
+    visibility: hidden;
+  }
+
+  .send-image::before
+  {
+  content: 'Choisir une image';
+  color: black;
+  display: inline-block;
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+
+  }
+
+  .send-image:hover::before{border-color: black;}
+
+  .send-image{color: transparent;}
+
+  .send-image:active{outline: 0;}
+
+  #send
+  {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #send > button
+  {
+    width: 80px;
+    height: 30px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto Regular";
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    background: #000;
+  }
+
+  /*  PROJECT ANNEXE  */
+
+  #annexe
+  {
+    width: 500px;
+    height: 550px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 14px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  }
+
+  #annexe > p
+  {
+    padding-bottom: 0.5rem;
+    font-family: "Roboto Slab";
+    font-size: 1.4rem;
+    border-bottom: 2px solid #000;
+  }
+
+  #annexe form
+  {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  #project-fetch
+  {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #project-fetch select
+  {
+    height: 30px;
+    padding-left: 5px;
+    font-size: 16px;
+    border: 1px solid #cacaca;
+    border-radius: 4px;
+    background : #f9fafb;
+  }
+
+  #subtitle-container
+  {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #subtitle-container input
+  {
+    height: 30px;
+    padding-left: 5px;
+    font-size: 16px;
+    border: 1px solid #cacaca;
+    border-radius: 4px;
+    background : #f9fafb;
+  }
+
+  #textarea-container
+  {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #textarea-container input
+  {
+    color: #9c9fa1;
+  }
+
+  #annexe form textarea
+  {
+    padding-top: 5px;
+    padding-left: 5px;
+    font-size: 16px;
+    border: 1px solid #cacaca;
+    border-radius: 4px;
+    background : #f9fafb;
+  }
+  
+  #annexe form textarea::placeholder
+  {
+    color: #9c9fa1;
+  }
+
+  .send-file
+  {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 15px;
+
+  }
+
+  .send-file:hover
+  {
+    cursor: pointer;
+  }
+
+  
+
+  .send-file i img
+  {
+    width: 30px;
+    height: 30px;
+  }
+  
+
+  #send-annexe
+  {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #send-annexe button
+  {
+    width: 80px;
+    height: 30px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto Regular";
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    background: #000;
+  }
+
+
+  /*  MODIF CONTAINER*/
+
+
+
+
+  /*  DELETE CONTAINER  */
+
+  #delete
+  {
+    width: 100%;
+    padding-top: 4rem;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    background-color: #f9fafb;
+  }
+
+  #delete > h2
+  {
+    border-bottom: 3px solid;
+  }
+
+  #delete-container
+  {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 12rem);
+    grid-auto-rows: 12rem;
+    justify-content: center;
+    gap: 3rem;
+    overflow-x: hidden;
+    overflow-y: scroll; // gérer le débordement
+
+  }
+
+  #full-dark-container
+  {
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #00000067;
+  }
+
+  #popup
+  {
+    position: absolute;
+    width: calc(100% - 230px);
+    min-height: calc(100vh - 90px - 4rem);
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 4;
+  }
+
+  #delete-popup
+  {
+    width: 500px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+
+  #text-container
+  {
+    width: 100%;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    font-family: "Roboto Slab";
+  }
+
+  #header-text
+  {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  #text-information
+  {
+    font-family: "Roboto Regular";
+    font-size: 1.2rem
+  }
+
+  #button-div
+  {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+  }
+
+  #button-div > button
+  {
+    width: 80px;
+    height: 30px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto Regular";
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  #button-div > button:hover
+  {
+    transform: scale(1.1);
+  }
+
+  #return-back
+  {
+    background-color: #fff;
+  }
+
+  #delete-project
+  {
+    color: #fff;
+    background-color: #F00;
+  }
+
+  .box-admin {
+    position: relative;
+    transition: 0.5s;
+  }
+   
+  .box-admin:hover {
+    box-shadow: none;
+    transform: scale(1.05);
+  }
+
+  .box-admin:hover .imgBox-admin {
+    transform: translate(-0.4rem, -0.2rem);
+  }
+
+  .box-admin:hover .voile-admin {
+    transform: translate(-0.4rem, -0.2rem);
+  }
+  
+
+ .imgBox-admin {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .imgBox-admin img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    resize: both;
+  }
+
+
+  .voile-admin {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    transition: all 0.5s ease-in-out;
+  }
+
+
+  .voile-admin:hover .overlay-admin{
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .voile-admin .overlay-admin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(1.2);
+    opacity: 0;
+    transition: transform .4s ease 0s;
+}
+
+.overlay-admin span{
+  position: absolute;
+  transform: scale(1);
+  transition: transform .4s ease 0s;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-family: "Roboto Slab"; 
+}
+

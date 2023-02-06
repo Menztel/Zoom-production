@@ -12,9 +12,11 @@ include('../includes/bdd.php');
 		'image/png',
 		
 	];
+    
+    var_dump($_FILES['project-image']['type']);
 
 	if (!in_array($_FILES['project-image']['type'], $acceptable)){
-		echo 'Format incorrecte';
+		header('location: ../admin_page.php?message=Erreur mauvais format image !&type=error');
 		exit;
 	}
     
@@ -26,11 +28,8 @@ include('../includes/bdd.php');
 		echo 'Image trop lourde';
     }
 
-	//ENREGISTREMENT DE L'IMAGE 
 
-    if($_POST['page-name-project'] == "Branding"){
-        $path = '../images/branding';
-    }
+	//ENREGISTREMENT DE L'IMAGE 
 
     if($_POST['page-name-project'] == "Photographie"){
         $path = '../images/photographie';
@@ -44,11 +43,11 @@ include('../includes/bdd.php');
         $path = '../images/illustration';
     }
 
-    if($_POST['page-name-project'] == "Edition"){
+    if($_POST['page-name-project'] == "Édition"){
         $path = '../images/edition';
     }
 
-    if($_POST['page-name-project'] == "Evenementiel"){
+    if($_POST['page-name-project'] == "Évènementiel"){
         $path = '../images/evenementiel';
     }
 
@@ -67,30 +66,42 @@ include('../includes/bdd.php');
 	//On enregistre le fichier envoyé dans le serveur
 	move_uploaded_file($_FILES['project-image']['tmp_name'], $destination);
 
+
+
+    
+
+
+
     if(isset($_POST['addForm-button'])) {
        
             
+        // Insert new project into project TABLE
+            $title = $_POST['project-title'];
+            $pageName = $_POST['page-name-project'];
 
             $q = 'INSERT INTO project (title, image, page_name) VALUES (:title, :image, :page_name)';
             $statement = $bdd->prepare($q);
-            if($statement !== false) {
+            if($statement != false) 
+            {
                 $result = $statement->execute([
-                                                'title' => $_POST['title-project'],
+                                                'title' => $title,
                                                 'image' => isset($fileName) ? $fileName : '',
-                                                'page_name' => $_POST['page-name-project'] 
+                                                'page_name' => $pageName
                 ]);
 
-                if($result == true) {
-                    echo "inserted";
+                if($result) {
+                    header('location: ../admin_page.php?message=Projet inséré !&type=valid');
+                    exit;
                 }
-                else {echo "failed";}
+                else {
+                    header('location: ../admin_page.php?message=Erreur insertion !&type=error');
+                    exit;
+                }
             }
             else {
                 echo "Erreur de préparation de la requête";
-            }
-            
+                exit;
+            };
     }
-        
-    
 
 ?>

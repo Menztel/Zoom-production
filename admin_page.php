@@ -6,80 +6,250 @@
 <!DOCTYPE html>
 
 <html>
+    	<?php
+            include("includes/head.php");
+        ?>
 
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="css/admin_sheet.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
-    </head>
-
-    <body> 
-    <button type="button" class="burger" onclick="toggleSidebar()">
-        <img class="burger-avatar" src="./assets/avatar.png" />
-        <span class="burger-icon"></span>
-    </button>
-    <div class="overlay"></div>
-    <aside class="sidebar">
-        <img class="sidebar-avatar" src="./assets/avatar.png" />
-        <div class="sidebar-username">Zoé Lavisse</div>
-        <div class="sidebar-role">Graphiste</div>
-        <nav class="sidebar-menu">
-            <button type="button">
-                <img src="./assets/home.png" />
-                    <span>Ajouter</span>
-            </button>
-            <button type="button">
-                <img src="./assets/settings.png" />
-                    <span>Supprimer</span>
-            </button>
-            <button type="button">
-                <img src="./assets/account.png" />
-                    <span>Modifier</span>
-            </button>
-        </nav>
-        <nav class="sidebar-menu bottom">
-            <button type="button">
-                <img src="./assets/logout.png" />
-                <a href="includes/deconnexion.php">
-                    <span>Déconnexion</span>
-                </a>
-            </button>
-        </nav>
-    </aside>
-
-    <div class="logo"><a href="index.php"><img src="logo_zoom.svg" alt="logo_Zoom"></a></div>
-
+    <body id="dash-body">
         
-        <!--<div id="admin_background">
-            <<P>Page admin</p>
-            <div class="addBox">
-                <button onclick="showForm()" class="addButton">+</button>
-                <div id="formDiv">
-                    <button onclick="removeForm()" id="removeForm">X</button>
-                    <form id="addForm" method="POST" action="project_integration/create_project.php" enctype="multipart/form-data">
-                        <div id="file-input">
-                            <input type="file" id="file" name="project-image">
-                            <label for="file">Choisir votre image</label>
-                        </div>
-                            <select id="addForm-page-name" class="addForm-select" name="page-name-project">
-                                <option value="Branding">Branding</option>
+        <div id="dashboard">
+
+            <?php include("includes/message.php");?>
+
+            <div id="top-container">
+               
+                <div id="logo-dashboard">
+                    <img src="logo_zoom.svg" alt="logo Zoom">
+                </div>
+               
+                <div id="profil-container">
+                    <img src="assets/avatar.png" alt="profil picture">
+                </div>
+
+            </div>
+
+            <div id="menu-container">
+                
+                <aside id="left-container">
+                    
+                    
+
+                    <div id="menu">
+                        
+                        <button class="link">
+                            <img src="images/icons/dashboard-icon.svg" alt="dashboard">
+                            Dashboard
+                        </button>    
+
+                        <button class="link">
+                            <img src="images/icons/add-icon.svg" alt="add">
+                            Ajouter
+                        </button>
+                    
+                        
+
+                        <div id="delete-section">
+                            <button>
+                                <img src="images/icons/delete-icon.svg" alt="delete"> 
+                            Supprimer
+                            </button>
+
+                            <select name="page-name-project" id="filter-page">
                                 <option value="Photographie">Photographie</option>
                                 <option value="Motion design">Motion design</option>
                                 <option value="Illustration">Illustration</option>
-                                <option value="Edition">Edition</option>
-                                <option value="Evenementiel">Evenementiel</option>
+                                <option value="Édition">Édition</option>
+                                <option value="Évènementiel">Évènementiel</option>
                             </select>
-                            <input type="text" id="addForm-title" class="addForm-input" name="title-project" placeholder="Ajouter le titre du projet">
-                            <button type="submit" id="addForm-button" name="addForm-button">Enregistrer</button>
-                    </form>
-                </div>
-            </div>
-           
-        </div>-->
+                        </div>
 
-        <script src="js/script.js"></script>
-    </body>
+                    </div>
+
+                    <a href="includes/deconnexion.php">
+                        <img src="images/icons/logout-icon.svg" alt="log out">
+                        Déconnexion
+                    </a>
+
+                </aside>
+
+
+                <div id="main-text">
+                    <h2>Bienvenue Zoe !</h2>
+                    <p>Ici tu trouveras tous les outils et fonctionnalités qui pourront t'aider à intégrer tes projets mais aussi à les modifier et supprimer à tout moment.</p>
+                    <p>N'hésite pas à me contacter si tu es perdue après tout, tu es la soeur de Heidi donc je me méfie ;)</p>
+                    <p>Je vais te préparer un moyen de me contacter directement de ce dashboard par mail (plus tard)</p>
+                </div>
+            
+                <div id="add-container">
+
+                    <div id="project-container">
+                            <p id="info-project">Créer un projet</p>
+                            <div id="project">
+                        
+                            <form id="add-form" action="project_integration/create_project.php" method="POST" enctype="multipart/form-data">
+                                <div id="project-name">
+                                    <p>Nom</p>
+                                    <input type="text" name="project-title" placeholder="projet">
+                                </div>
+                                <div id="page-name">
+                                    <p>Choisir une page :</p>
+                                    <select name="page-name-project" id="select-page">
+                                        <option value="Photographie">Photographie</option>
+                                        <option value="Motion design">Motion design</option>
+                                        <option value="Illustration">Illustration</option>
+                                        <option value="Édition">Édition</option>
+                                        <option value="Évènementiel">Évènementiel</option>
+                                    </select>
+                                </div>    
+                                
+                                <!--<label class="send-file" for="multi-file"><i><img src="images/icons/file-import.svg" alt="import files icon"></i>Upload image</label>-->
+                                <input class="send-image" type="file" name="project-image">
+                                <div id="send">
+                                <button type="submit" name="addForm-button">Envoyer</button>
+                                </div>
+                                
+                            </form>
+                    
+                            </div>
+                    </div>
+                    
+
+                    <div id="annexe">
+
+                        <p>Ajouter une annexe</p>
+                        <form action="project_integration/create_annexe.php" method="POST" enctype="multipart/form-data">
+                        <div id="project-fetch">
+                            <p>Nom Projet</p>
+                            <?php
+                            
+                                include('includes/bdd.php');
+
+                                $q = 'SELECT title FROM project';
+                                $statement = $bdd->query($q);
+                                
+
+                                if($statement){
+                                    
+                                    $projectsTitle = $statement->fetchALL(PDO::FETCH_ASSOC);
+                                    
+                                    echo '<select name="project-name-annexe">';
+
+                                        foreach($projectsTitle as $title){
+                                
+                                            echo '<option value="' . $title['title'] . '">' . $title['title'] . '</option>';  
+                                            };  
+
+                                    echo '</select>';
+                                        
+                                    };
+                            
+                            ?>
+                        </div>
+                        
+                        <div id="subtitle-container">
+                            <p>Sous-titre Projet</p>
+                            <input type="text" name="subtitle" placeholder="sous-titre">
+                        </div>
+                        
+                        <div id="textarea-container">
+                            <p>Description :</p>
+                            <textarea name="description" id="" cols="30" rows="8" placeholder="écrire la description de l'annexe..."></textarea>
+                        </div>
+                        
+                        <input class="send-image" type="file" name="uploads[]" id="multi-file" multiple>
+                        <!--<label class="send-file" for="multi-file"><i><img src="images/icons/file-import.svg" alt="import files icon"></i>Upload image</label>-->
+                        <div id="send-annexe"><button type="submit" name="add-annexe">Envoyer</button></div>
+                        
+                        </form>
+                        
+                    
+                    </div>
+
+                </div>
+                
+                
+                <div id="delete">
+                
+                    <h2 id="state_project">Tous les projets</h2>
+
+                    <div id="delete-container">
+                        <?php
+                        
+                            $src = '';
+                            $q = 'SELECT id, title, image, page_name FROM project';
+                            $req = $bdd->query($q);
+                            if($req !== false) {
+                                $projects = $req->fetchALL(PDO::FETCH_ASSOC);
+
+                                
+                                foreach($projects as $project) {
+                                    
+                                    //replace all space in the string by ''
+                                    $newId = str_replace(' ', '', $project['title']);
+                                    echo '<div id="'. $newId .'" class="'."box-admin" . " " . $project['id'] .'" onclick="fetchIdProject(this.id)">';
+                                    
+                                    // Optimisation (Changer le nom des pages pour mettre en minuscule)
+
+                                    /*$name = ['Photographie', 'Motion design', 'Illustration', "Édition", "Évènementiel"];
+                                    $src = '';
+                                    for($i = 0; $i < count($name); $i++){
+                                        if($project['page_name'] == $name[$i])
+                                        {
+                                            $src = 'images/' . strtolower($project['name']) .''
+                                        }
+                                    }*/
+                                    
+                                    if($project['page_name'] == 'Photographie')
+                                    {
+                                        $src = 'images/photographie/' . $project['image'] .'';
+                                    };
+
+                                    if($project['page_name'] == 'Motion design')
+                                    {
+                                        $src = 'images/motion_design/' . $project['image'] .''; 
+                                    }
+                                    
+                                    if($project['page_name'] == 'Illustration')
+                                    {
+                                        $src = 'images/illustration/' . $project['image'] .''; 
+                                    }
+
+                                    if($project['page_name'] == "Édition")
+                                    {
+                                        $src = 'images/edition/' . $project['image'] .''; 
+                                    }
+
+                                    if($project['page_name'] == "Évènementiel")
+                                    {
+                                        $src = 'images/evenementiel/' . $project['image'] .''; 
+                                    }
+                                    
+                                        echo '<div class="imgBox-admin">' . '<img src="' . $src .'">' . '</div>';
+                                        echo '<div class="voile-admin">';
+                                        echo '<div class="overlay-admin">' . '<span>' . $project['title']  . '</span>' . '</div>';
+                                        echo '</div>';
+
+                                    echo '</div>'; 
+                                }
+                            
+                                    
+
+                            }
+                            else {echo "Erreur de préparation de la requête";}
+                    
+                        ?>
+                        
+                    </div>
+
+                </div>
+                    
+            </div>
+            
+
+    
+        </div>
+     </body>
+    <script src="js/script.js"></script>
 
 </html>
+

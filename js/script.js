@@ -1,6 +1,6 @@
-const mainMenu = document.querySelector('.mainMenu');
-const closeMenu = document.querySelector('.closeMenu');
-const openMenu = document.querySelector('.openMenu');
+/*const openMenu = document.getElementById("openMenu");
+const mainMenu = document.getElementById("mainMenu");
+const closeMenu = document.getElementById("closeMenu");
 const menu_items = document.querySelectorAll('nav .mainMenu li a');
 
 
@@ -26,149 +26,188 @@ function close(){
 
 
 
-/// Show the addForm
+// Show the addForm
 
 function showForm() {
     const formDiv = document.getElementById("formDiv").style.visibility = "visible";
     const removeButton = document.getElementById("removeForm").style.visibility = "visible";
-}
+};
 
 function removeForm() {
     const removeForm = document.getElementById("formDiv").style.visibility = "hidden";
     const removeButton = document.getElementById("removeForm").style.visibility = "hidden";
-}
+};
 
 
-/// Admin toggle burger menu
+// Admin toggle burger menu
 function toggleSidebar()
 {
     document.body.classList.toggle("open");
-} 
+};
+
+*/
+
+// display forms
+
+const menuLinks = document.getElementById('menu')
+const dashButton = menuLinks.children[0]
+const addButton = menuLinks.children[1]
+const deleteButton = menuLinks.lastElementChild.firstElementChild
+const addContainer = document.getElementById('add-container')
+const projectFile = document.getElementById("file")
+const annexeFiles = document.getElementById("multi-file")
+const mainText = document.getElementById('main-text')
+const modif = document.getElementById('modif-container')
+const deleteContainer = document.getElementById('delete')
+const messageBox = document.getElementById("message")
 
 
-
-/// Ajouter une box pour un nouveau projet
-
-
-/*function addProject() {
-
-    // Variable pour le nom des pages
-
-    const brandingPage = document.getElementById("main-branding");
-    const photographiePage = document.getElementById("main-photographie");
-    const motiondesignPage = document.getElementById("main-motion-design");
-    const illustrationgPage = document.getElementById("main-illustration");
-    const editionPage = document.getElementById("main-edition");
-    const evenementielPage = document.getElementById("main-evenementiel");
-    
-   
-    const brandingCards = document.getElementById("cards-branding");
-    const photographieCards = document.getElementById("cards-photographie");
-    const motiondesignCards= document.getElementById("cards-motion-design");
-    const illustrationgCards = document.getElementById("cards-illustration");
-    const editionCards = document.getElementById("cards-edition");
-    const evenementielCards = document.getElementById("cards-evenementiel");
-
-    const projectTitleInput = document.getElementById("addForm-title");
-    const projectPageNameSelect = document.getElementById("addForm-page-name");
-    const projectImageInput = document.getElementById("file");
-
-    const projectTitle = projectTitleInput.value;
-
-    const selectedOption = projectPageNameSelect.option[projectPageNameSelect.selectedIndex];
-    const pageName = selectedOption.innerHTML;
-
-    const projectImage = projectImageInput.value;
-    
-    const project = {
-        title: projectTitle,
-        pageName: pageName,
-        image: projectImage
-    };
-
-
-              
+// Hide the alert message after inserted or error
+const time = setTimeout(hideMessage, 5000);
+function hideMessage(){
+    messageBox.style.display = "none"
 }
 
 
-function addProjectToMain(g) {
-    // Convertir l'objet project en tableau et le parcourir pour récuperer les valeurs
+dashButton.addEventListener('click', () => {
+    mainText.style.display = "flex"
+    addContainer.style.display = "none"
+    deleteContainer.style.display = "none"
+});
+
+addButton.addEventListener('click', () => {
+    addContainer.style.display = "flex"
+    mainText.style.display = "none"
+    deleteContainer.style.display = "none"
+});
+
+
+
+deleteButton.addEventListener('click', () => {
+    addContainer.style.display = "none"
+    mainText.style.display = "none"
+    deleteContainer.style.display = "flex"
+    deleteContainer.scrollIntoView();
+})
+
+
+
+// ONLOAD to reload fetch projects with page_name filter
+
+$(document).ready(function(){
+    $("#filter-page").on('change', function(){
+        let value = $(this).val(); // take the value of filter_page select
+        //alert(value);
+
+        $.ajax({
+            url: "project_integration/fetch_project.php",
+            type: "POST",
+            data: 'request=' + value, // create variable to send the request
+            beforeSend:function(){
+                $("#delete-container").html("<span>Chargement..</span>"); // create a span before send
+            },
+            success:function(data){
+                $("#delete-container").html(data); // return succes of request sended
+            }
+        });
+    });
+});
+
+// Fetch project id when clicked
+
+function fetchIdProject(clickedId){
+    const body = document.getElementById("dash-body")
+    const parent = document.getElementById("delete")
     
-    const projectValues = Object.values(project);
+    const fullDark = document.createElement("div")
+    fullDark.setAttribute("id", "full-dark-container")
+    body.append(fullDark)
+
+    // create full screen div to stop interaction
+    const fullDiv = document.createElement("div")
+    fullDiv.setAttribute("id","popup")
+
+
+    // create div
+    const div = document.createElement("div")
+    div.setAttribute("id","delete-popup")
+
+    // create text-container
+    const textContainer = document.createElement("div")
+    textContainer.setAttribute("id", "text-container")
+
+
+    // create header text div
+    const headerText = document.createElement("p")
+    headerText.innerHTML = "Supprimer un projet"
+    headerText.setAttribute("id","header-text")
+
+    // create text area for information
+
+    const textInformation = document.createElement("p")
+    textInformation.innerHTML = "Es-tu sûr de vouloir supprimer " + clickedId + " ?"
+    textInformation.setAttribute("id","text-information")
+
+    // create div to store buttons
+    const buttonDiv = document.createElement("div")
+    buttonDiv.setAttribute("id","button-div")
+
+    // create button to delete the popup
+    const returnButton = document.createElement("button")
+    returnButton.innerHTML = "Quitter"
+    returnButton.setAttribute("id","return-back")
+    returnButton.addEventListener("click", () => {
+        fullDark.remove()
+        fullDiv.remove()
+        div.remove()
+    })
+
+    // create button to delete the project
+    const deleteProject = document.createElement("button")
+    deleteProject.innerHTML = "Supprimer"
+    deleteProject.setAttribute("id","delete-project")
+    deleteProject.setAttribute("onclick","deleteProject" + '(' + clickedId + ')' )
+
+    // add element in buttonDiv
+    buttonDiv.appendChild(returnButton)
+    buttonDiv.appendChild(deleteProject)
+
+    // add headerText & textInformation into text-container
+    textContainer.appendChild(headerText)
+    textContainer.appendChild(textInformation)
+
+    // add elements into div
+    div.appendChild(textContainer)
+    div.appendChild(buttonDiv)
+
+    // add div in delete-container
+    fullDiv.appendChild(div)
+
+     // add fullDiv into parent
+     parent.appendChild(fullDiv)
     
-        
-    // création de la box 
-    const box = document.createElement("div");
-        box.className = "box";
-
-    const imgBox = document.createElement("div");
-    imgBox.className = "imgBox";
-        const img = document.createElement("img");
-            img.src = project.image; 
-            imgBox.appendChild(img);
-
-    const voile = document.createElement("div");
-        voile.className = "voile";
-
-        const overlay = document.createElement("div");
-            overlay.className = "overlay";
-            voile.appendChild(overlay);
-
-                const spanTitle = createElement("span");
-                    spanTitle.innerHTML = project.title;
-                    overlay.appendChild(spanTitle);
-
-    const colorBox = document.createElement("div");
-    colorBox.className = "colorBox";
-        
-    // Ajout des differents elements dans la box
-
-     box.appendChild(imgBox);
-     box.appendChild(voile);
-     box.appendChild(colorBox);   
-
-    // Ajout de la box dans la grille correspondante à la page selectionné
-
-     if(project.pageName === "Branding"){brandingCards.appendChild(box);}
-     if(project.pageName === "Photographie"){photographieCards.appendChild(box);}
-     if(project.pageName === "Motion design"){motiondesignCards.appendChild(box);}
-     if(project.pageName === "Illustration"){illustrationgCards.appendChild(box);}
-     if(project.pageName === "Edition"){editionCards.appendChild(box);}
-     if(project.pageName === "Evenementiel"){evenementielCards.appendChild(box);}
-
 }
 
-function insertProject(g) {
+
+function deleteProject(el){
+    const element = el // fetch the project div (faire attention différent de clickedId qui retourne l'id)
+    const id = document.getElementById(el.id)
+    const idToDelete = id.classList[1] // list all classes
+    const textInformation = document.getElementById("text-information")
+    const deleteButton = document.getElementById("delete-project")
+
+    // XMLHttpRequest to delete the clicked project
     const request = new XMLHttpRequest();
-    request.open('POST', 'create_project.php');
+    request.open('GET', 'project_integration/delete_project.php?id=' + idToDelete );
     request.onreadystatechange = function() {
         if(request.readyState === 4) {
-            if(request.responseText === 'inserted') {
-                addProjectToMain(g);
+            if(request.responseText === "deleted") {
+                element.remove();
+                textInformation.innerHTML = "Le projet a bien été supprimé de la base de données !";
+                deleteButton.style.visibility = "hidden";
             }
         }
     };
-    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    const boxTab = [];
-    boxTab.push("title=" + project.title);
-    boxTab.push("title=" + project.pageName);
-    boxTab.push("title=" + project.image);
-    request.send(boxTab.join('&'));
+    request.send();
 }
 
-
-function loadProject() {
-    const request = new XMLHttpRequest();
-    request.open('GET', 'list_project.php');
-    request.onreadystatechange() = function () {
-        if(request.readyState === 4) {
-            const projects = request.responseText;
-            const 
-        }
-    }
-}
-
-
-function removeProject() {}
-
-*/
