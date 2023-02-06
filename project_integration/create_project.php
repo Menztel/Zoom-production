@@ -89,7 +89,7 @@ include('../includes/bdd.php');
                                                 'page_name' => $pageName
                 ]);
 
-                if($result == true) {
+                if($result) {
                     header('location: ../admin_page.php?message=Projet inséré !&type=valid');
                     exit;
                 }

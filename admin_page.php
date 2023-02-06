@@ -14,9 +14,7 @@
         
         <div id="dashboard">
 
-            <?php
-                include("includes/message.php");
-            ?>
+            <?php include("includes/message.php");?>
 
             <div id="top-container">
                

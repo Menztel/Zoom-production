@@ -61,6 +61,7 @@ const modif = document.getElementById('modif-container')
 const deleteContainer = document.getElementById('delete')
 const messageBox = document.getElementById("message")
 
+
 // Hide the alert message after inserted or error
 const time = setTimeout(hideMessage, 5000);
 function hideMessage(){
@@ -200,7 +201,7 @@ function deleteProject(el){
     request.open('GET', 'project_integration/delete_project.php?id=' + idToDelete );
     request.onreadystatechange = function() {
         if(request.readyState === 4) {
-            if(request.responseText === 'deleted') {
+            if(request.responseText === "deleted") {
                 element.remove();
                 textInformation.innerHTML = "Le projet a bien été supprimé de la base de données !";
                 deleteButton.style.visibility = "hidden";
