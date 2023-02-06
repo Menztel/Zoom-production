@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <?php
-$title = "Page photographie";
   include('includes/head.php');
   include('includes/bdd.php');
 ?>
@@ -9,27 +8,21 @@ $title = "Page photographie";
   <?php
     include('includes/header.php');
   ?>
-    <div id="main-photographie" class="main-content">
-      <div class="page-title">
-        <h1>Photographie</h1>
-        <span></span>
-      </div>
-      
-      <div id="cards-photographie" class="cards">
+    <div id="main-illustration" class="main-content">
+      <div id="cards-illustration" class="cards">
+
         <?php
 
-          
-
-          $q = 'SELECT title, image, page_name FROM project';
+          $q = 'SELECT id, title, image, page_name FROM project';
           $req = $bdd->query($q);
           if($req !== false) {
               $projects = $req->fetchALL(PDO::FETCH_ASSOC);
-    
+
 
               foreach($projects as $project) {
-                if($project['page_name'] == "Photographie"){
+                if($project['page_name'] == "Illustration"){
                   echo '<div class="box">';
-                      echo '<div class="imgBox">' . '<img src="images/photographie/' . $project['image'] . '">' . '</div>';
+                      echo '<div class="imgBox">' . '<img src="images/illustration/' . $project['image'] . '">' . '</div>';
                       echo '<div class="voile">';
                       echo '<div class="overlay">' . '<span>' . $project['title']  . '</span>' . '</div>';
                       echo '</div>';
@@ -43,6 +36,8 @@ $title = "Page photographie";
           }
           else {echo "Erreur de préparation de la requête";}
         ?>
+
+
         
       </div>
     </div>

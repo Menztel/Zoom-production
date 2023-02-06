@@ -51,5 +51,6 @@ $title = "Page Édition";
 
 
 </body>
+<script src="js/script.js"></script>
 </html>
 

@@ -52,5 +52,6 @@ $title = "Page identitée visuelle";
 
 
 </body>
+<script src="js/script.js"></script>
 </html>
 

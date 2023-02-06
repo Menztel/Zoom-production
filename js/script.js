@@ -1,7 +1,7 @@
-/*const openMenu = document.getElementById("openMenu");
-const mainMenu = document.getElementById("mainMenu");
-const closeMenu = document.getElementById("closeMenu");
-const menu_items = document.querySelectorAll('nav .mainMenu li a');
+const mainMenu = document.getElementById('mainMenu');
+const closeMenu = document.getElementById('closeMenu');
+const openMenu = document.getElementById('openMenu');
+const menu_items = document.querySelectorAll('nav #mainMenu li a');
 
 
 
@@ -26,7 +26,56 @@ function close(){
 
 
 
-// Show the addForm
+
+/// Header Dropdown Menu
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+
+const arrow = document.getElementById("arrow");
+const dropMenu = document.getElementById("dropMenu");
+const drop = document.getElementById("drop");
+const button = document.getElementsByClassName("dropbtn");
+/*dropMenu.addEventListener('mouseover', function(){
+    button[0].style.transform = "translateY(-10px)";
+    dropMenu.style.transform = "translateY(-10px)";
+    arrow.style.transform = "rotate(90deg)";
+    drop.style.lineHeight = "1em";
+    const li = document.getElementsByClassName("dropdown-content");
+    const a = document.getElementsByClassName("link-content");
+    let i;
+    for(i = 0; i < li.length; i++){
+        console.log(li[i]);
+        li[i].classList.toggle("show");
+        a[i].style.fontSize = "18px";
+};
+});
+
+
+// Close the dropdown menu if the user clicks outside of it
+dropMenu.addEventListener('mouseout', function(event){
+    
+    if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+        button[0].style.transform = "translateY(0px)";
+        dropMenu.style.transform = "translateY(0px)";
+        arrow.style.transform = "rotate(0deg)";
+        }
+    }
+    }
+    
+});
+*/
+
+
+
+
+/// Show the addForm
 
 function showForm() {
     const formDiv = document.getElementById("formDiv").style.visibility = "visible";
