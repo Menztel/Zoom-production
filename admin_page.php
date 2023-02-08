@@ -249,7 +249,7 @@
     
         </div>
      </body>
-    <script src="js/script.js"></script>
+    <script src="js/dashboard.js"></script>
 
 </html>
 
