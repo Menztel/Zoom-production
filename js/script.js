@@ -27,6 +27,3 @@ menu_items.forEach(item => {
         close();
     })
 })
-
-
-
