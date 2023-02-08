@@ -10,7 +10,7 @@
         <header>
             <nav class="nav_home">
                 <div class="logo"><a href="index.php"><img src="logo_zoom.svg"></a></div>
-                <div id="openMenu"><i class="fa fa-bars i_index"></i></div>
+                <div class="openMenu"><i class="fa fa-bars i_index"></i></div>
                 <ul id="mainMenu">
 
 
