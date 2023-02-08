@@ -10,9 +10,7 @@ const drop = document.getElementById("drop");
 const button = document.getElementsByClassName("dropbtn");
 
 
-console.log(openMenu)[0];
-
-openMenu.addEventListener('click', () => {
+openMenu[0].addEventListener('click', () => {
     mainMenu.style.display = 'flex';
     mainMenu.style.top = '0';
 });
