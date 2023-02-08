@@ -7,6 +7,7 @@
 
 <html>
     	<?php
+            $title = "Pannel admin";
             include("includes/head.php");
         ?>
 

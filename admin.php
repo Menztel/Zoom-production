@@ -3,9 +3,9 @@
 <html lang="en">
 
     <?php
-
+        $title = "Page d'authenfication";
         include("includes/head.php");
-
+        
     ?>
 
     <body>
