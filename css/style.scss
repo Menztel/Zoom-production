@@ -385,6 +385,18 @@ opacity: 0.8;
 z-index: -1;
 }
 
+#new-video
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  z-index: -1;
+}
+
 .social
 {
 position: absolute;
@@ -2093,7 +2105,6 @@ font-size: 10pt;
 {
   cursor: pointer;
 }
-
 
 
 .send-file i img
