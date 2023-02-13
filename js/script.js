@@ -26,6 +26,8 @@ menu_items.forEach(item => {
     })
 })
 
+// Video in index.php
+
 const width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 const hero = document.getElementsByClassName("hero")
 const video = document.querySelector(".hero video")
@@ -51,5 +53,5 @@ if(width >= 1024){
     hero[0].appendChild(video)
 }
 
-console.log()
+
 
