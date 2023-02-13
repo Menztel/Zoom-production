@@ -27,11 +27,13 @@ $title = "Page évènementiel";
             foreach($projects as $project) {
               if($project['page_name'] == "Evenementiel"){
                 echo '<div class="box">';
+                echo '<a href="model.php">';
                     echo '<div class="imgBox">' . '<img src="images/evenementiel/' . $project['image'] . '">' . '</div>';
                     echo '<div class="voile">';
                     echo '<div class="overlay">' . '<span>' . $project['title']  . '</span>' . '</div>';
                     echo '</div>';
                     echo '<div class="colorBox">' . '</div>';
+                  echo'</a>';
                 echo '</div>';
               }  
             }
