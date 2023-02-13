@@ -20,7 +20,7 @@ $title = "Page photographie";
 
           
 
-          $q = 'SELECT title, image, page_name FROM project';
+          $q = 'SELECT id, title, image, page_name FROM project';
           $req = $bdd->query($q);
           if($req !== false) {
               $projects = $req->fetchALL(PDO::FETCH_ASSOC);
@@ -29,7 +29,7 @@ $title = "Page photographie";
               foreach($projects as $project) {
                 if($project['page_name'] == "Photographie"){
                   echo '<div class="box">';
-                    echo '<a href="model.php">';
+                    echo '<a href="model.php?id=' . $project['id'] . '">';
                       echo '<div class="imgBox">' . '<img src="images/photographie/' . $project['image'] . '">' . '</div>';
                       echo '<div class="voile">';
                       echo '<div class="overlay">' . '<span>' . $project['title']  . '</span>' . '</div>';
