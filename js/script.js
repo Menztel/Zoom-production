@@ -52,6 +52,3 @@ if(width >= 1024){
     newVideo.remove()
     hero[0].appendChild(video)
 }
-
-
-
