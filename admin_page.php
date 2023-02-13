@@ -7,6 +7,7 @@
 
 <html>
     	<?php
+            $title = "Pannel admin";
             include("includes/head.php");
         ?>
 
@@ -249,7 +250,7 @@
     
         </div>
      </body>
-    <script src="js/script.js"></script>
+    <script src="js/dashboard.js"></script>
 
 </html>
 
