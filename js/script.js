@@ -28,7 +28,7 @@ menu_items.forEach(item => {
 
 // Video in index.php
 
-const width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+const width = (screen.width > 0) ? screen.width : window.innerWidth;
 const hero = document.getElementsByClassName("hero")
 const video = document.querySelector(".hero video")
 
