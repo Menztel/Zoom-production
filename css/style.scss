@@ -438,7 +438,7 @@ height: 70px;
 {
   display: grid;
   grid-template-columns: repeat(3, 16rem);
-  grid-template-rows:  repeat(3, 16rem);
+  grid-auto-rows: 16rem;
   justify-content: center;
   gap: 4rem;
 }
@@ -1325,6 +1325,8 @@ background: rgb(59, 59, 59);
   width: 40px;
   height: 40px;
 }
+
+
 /*  DASHBOARD CONTAINER */
 
 #menu-container
