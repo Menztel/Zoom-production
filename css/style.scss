@@ -478,6 +478,12 @@ height: 70px;
   font-weight: 1000;
 }
 
+.box > a
+{
+  text-decoration: none;
+  list-style: none;
+}
+
 .imgBox 
 {
   position: absolute;
