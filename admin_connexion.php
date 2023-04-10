@@ -27,42 +27,4 @@
             };
             };
     };
-
-/* INSCRIPTION CHECK */
-
-
-    /*if(isset($_POST['submit'])) {
-
-    // SI les champs sont vides
-
-    if(empty($_POST['pseudo']) || empty($_POST['password'])) {
-        header('location: index.php');
-        exit;
-    }
-
-
-    $pseudo = htmlspecialchars($_POST['pseudo']);
-    $password = hash('sha512', $_POST['password']);
-    if(!empty($_POST['pseudo']) && !empty($_POST['password'])) {
-        $q = 'INSERT INTO user(pseudo, password) VALUES (:pseudo, :password)';
-        $req = $bdd->prepare($q);
-        $result = $req->execute([
-                                    'pseudo' => $pseudo,
-                                    'password' => $password
-        ]);
-    }
-    if(!$result) {
-        header('location: index.php');
-        exit;
-    }
-    else {
-        header('location: admin_page.php');
-    }
-
-    }*/
-
-
-
-    
-
 ?>

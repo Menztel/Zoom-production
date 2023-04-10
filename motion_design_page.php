@@ -27,11 +27,13 @@ $title = "Page motion design";
             foreach($projects as $project) {
               if($project['page_name'] == "Motion design"){
                 echo '<div id="box" class="box">';
+                echo '<a href="model.php?id=' . $project['id'] . '">';
                     echo '<div class="imgBox">' . '<img src="images/motion_design/' . $project['image'] . '">' . '</div>';
                     echo '<div class="voile">';
                     echo '<div class="overlay">' . '<span>' . $project['title']  . '</span>' . '</div>';
                     echo '</div>';
                     echo '<div class="colorBox">' . '</div>';
+                  echo '</a>';
                 echo '</div>';
               }  
             }

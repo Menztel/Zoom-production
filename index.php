@@ -50,7 +50,7 @@
         <div class="hero">
             
 
-            <video src="teaser.mp4" muted loop autoplay type="video/mp4"></video>
+            
             
             
         

@@ -152,10 +152,10 @@ function deleteProject(el){
 
     // XMLHttpRequest to delete the clicked project
     const request = new XMLHttpRequest();
-    request.open('GET', 'project_integration/delete_project.php?id=' + idToDelete );
+    request.open('GET', 'project_integration/delete_project.php?id=' + idToDelete);
     request.onreadystatechange = function() {
         if(request.readyState === 4) {
-            if(request.responseText === "deleted") {
+            if(request.response) {
                 element.remove();
                 textInformation.innerHTML = "Le projet a bien été supprimé de la base de données !";
                 deleteButton.style.visibility = "hidden";
@@ -164,3 +164,7 @@ function deleteProject(el){
     };
     request.send();
 }
+
+/**
+ 
+*/
