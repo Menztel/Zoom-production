@@ -85,18 +85,6 @@
     transition: all 1s;
   }
 
-  @keyframes infinitLoop
-  {
-    from {
-      transform: scale(1) translateX(5px);
-    }
-
-    to {
-      transform: scale(1.2) translateX(8px);
-    }
-  }
-
-
   /* Dropdown Button */
   #drop .dropbtn 
   {
@@ -112,7 +100,6 @@
     transition: 0.35s ease-in;
   }
 
-  
   #drop:hover .dropbtn
   {
     transform: translateY(-10px) scale(1.2);
@@ -139,9 +126,7 @@
       transform: scale(0.5);
     }
 
-    50% {
-      
-    }
+    50% {}
 
     to {
       opacity: 1;
@@ -154,7 +139,6 @@
     filter: invert(20%);
     animation: fadein 0.5s ease-in;
   }
-
 
   .link-content
   {
@@ -171,7 +155,6 @@
   {
     margin: 0px 10px;
   }
-
 
   /* Links inside the dropdown */
   .dropdown-content a 
