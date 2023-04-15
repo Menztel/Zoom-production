@@ -54,36 +54,36 @@
                     
                     <div class="contactForm">
                         <h2>Envoyer un message</h2>
-                        <div class="formBox">
+                        <form action="send_email.php" method="POST" class="formBox">
                             <div class="inputBox w50">
-                                <input type="text" required>
+                                <input type="text" name="lastname" required>
                                 <span>Nom</span>
                             </div>
 
                             <div class="inputBox w50">
-                                <input type="text" required>
+                                <input type="text" name="firstname" required>
                                 <span>Prénom</span>
                             </div>
 
                             <div class="inputBox w50">
-                                <input type="email" required>
+                                <input type="email" name="email" required>
                                 <span>Adresse mail</span>
                             </div>
 
                             <div class="inputBox w50">
-                                <input type="text" required>
+                                <input type="text" name="phone" required>
                                 <span>Téléphone</span>
                             </div>
 
                             <div class="inputBox w100">
-                                <textarea required></textarea>
+                                <textarea name="message" required></textarea>
                                 <span>Écrivez votre message ici...</span>
                             </div>
 
                             <div class="inputBox w100">
-                                <input type="submit" value="Envoyer">
+                                <input type="submit" name="send-mail" value="Envoyer">
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </section>
