@@ -28,15 +28,13 @@ $title = "Page photographie";
 
               foreach($projects as $project) {
                 if($project['page_name'] == "Photographie"){
-                  echo '<div class="box">';
-                    echo '<a href="model.php?id=' . $project['id'] . '">';
+                  echo '<a href="model.php?id=' . $project['id'] . '">';
+                    echo '<div class="box stacked">';
                       echo '<div class="imgBox">' . '<img src="images/photographie/' . $project['image'] . '">' . '</div>';
-                      echo '<div class="voile">';
                       echo '<div class="overlay">' . '<span>' . $project['title']  . '</span>' . '</div>';
-                      echo '</div>';
                       echo '<div class="colorBox">' . '</div>';
-                    echo '</a>';
-                  echo '</div>';
+                    echo '</div>';
+                  echo '</a>';
                 }  
               }
             

@@ -26,15 +26,15 @@ $title = "Page identitée visuelle";
 
             foreach($projects as $project) {
               if($project['page_name'] == "Branding"){
-                echo '<div class="box">';
                 echo '<a href="model.php?id=' . $project['id'] . '">';
+                  echo '<div class="box stacked">';
                     echo '<div class="imgBox">' . '<img src="images/branding/' . $project['image'] . '">' . '</div>';
                     echo '<div class="voile">';
                     echo '<div class="overlay">' . '<span>' . $project['title']  . '</span>' . '</div>';
                     echo '</div>';
                     echo '<div class="colorBox">' . '</div>';
-                  echo '</a>';
-                echo '</div>';
+                  echo '</div>';
+                echo '</a>';
               }  
             }
           

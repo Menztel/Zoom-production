@@ -3,11 +3,6 @@
 include('../includes/bdd.php');
   
 
-
-    
-
-
-
     if(isset($_POST['add-annexe']) && isset($_POST['project-name-annexe']) && isset($_POST['subtitle']) && isset($_POST['description']) && isset($_FILES['uploads'])) {
         
         $namePage = $_POST['project-name-annexe'];
