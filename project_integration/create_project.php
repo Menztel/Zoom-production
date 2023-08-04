@@ -3,16 +3,12 @@
 include('../includes/bdd.php');
    //Vérification image : fichier uploadé est une image et ne dépasse pas 1Mo.
 
-
     //si le fichier n'est pas du bon type : pas dans le tableau de type alors redirection avec message
-
     $acceptable = [
         'image/jpeg',
         'image/gif',
         'image/png',
-        
     ];
-    
 
     if (!in_array($_FILES['project-image']['type'], $acceptable)){
         header('location: ../admin_page.php?message=Erreur mauvais format image !&type=error');
@@ -20,17 +16,13 @@ include('../includes/bdd.php');
     }
     
     //si la taille du fichier est > 2Mo 
-
     $maxSize = 2*1024*1024 ; //1Mo
-
     if($_FILES['project-image']['size'] > $maxSize ) {
         echo 'Image trop lourde';
     }
 
-
     //ENREGISTREMENT DE L'IMAGE 
-
-    if($_POST['page-name-project'] == "Photographie"){
+    if($_POST['page-name-project'] == "Identitée visuelle"){
         $path = '../images/photographie';
     }
 
@@ -38,11 +30,7 @@ include('../includes/bdd.php');
         $path = '../images/motion_design';
     }
 
-    if($_POST['page-name-project'] == "Illustration"){
-        $path = '../images/illustration';
-    }
-
-    if($_POST['page-name-project'] == "Édition"){
+    if($_POST['page-name-project'] == "Social media"){
         $path = '../images/edition';
     }
 
@@ -55,9 +43,7 @@ include('../includes/bdd.php');
     }
 
     $fileName = $_FILES['project-image']['name'];
-
     $array= explode('.', $fileName);
-
     $extension = end($array);
     $fileName ='img-' . time() . '.' . $extension ;
     $destination = $path . '/' . $fileName ;

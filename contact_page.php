@@ -17,19 +17,21 @@
                             <h2>Contact Info</h2>
                             <ul class="info">
                                 <li>
-                                    <span><img src="images/icons/localisation.png" alt="localisation icon"></span>
+                                    <span>
+                                    <i class="fa-solid fa-location-dot fa-lg"></i>
+                                    </span>
                                     <span>
                                         Papeete, Îles du Vent, Polynésie française
                                     </span>
                                 </li>
                                 <li>
-                                    <span><img src="images/icons/mail.png" alt="mail icon"></span>
+                                    <span><i class="fa-solid fa-envelope fa-lg"></i></span>
                                     <span>
                                         contact@zoom-prod.com
                                     </span>
                                 </li>
                                 <li>
-                                    <span><img src="images/icons/telephone.png" alt="telephone icon"></span>
+                                    <span><i class="fa-solid fa-phone fa-lg"></i></span>
                                     <span>
                                         +689 87 79 98 91
                                     </span>

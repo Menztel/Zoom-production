@@ -1,14 +1,11 @@
 <?php
-
 include('../includes/bdd.php');
   
-
     if(isset($_POST['add-annexe']) && isset($_POST['project-name-annexe']) && isset($_POST['subtitle']) && isset($_POST['description']) && isset($_FILES['uploads'])) {
         
         $namePage = $_POST['project-name-annexe'];
 
         // Fetch id of project
-
         $q = 'SELECT id FROM project WHERE title = ?';
         $statement = $bdd->prepare($q);
 
@@ -16,17 +13,12 @@ include('../includes/bdd.php');
         {
             $result = $statement->execute(array($namePage));
             $projectId = $statement->fetch(PDO::FETCH_ASSOC);
-        }
+        }        
 
-        
-
-          // Insert annexe
-       
+        // Insert annexe
         $subtitle = $_POST['subtitle'];
         $description = $_POST['description'];
         $project_id = implode($projectId); // transform $projectId array into a string
-
-        
 
         $q = 'INSERT INTO annexe(subtitle, description, id_project) VALUES(:subtitle, :description, :id_project)';
             $statement = $bdd->prepare($q);
@@ -39,10 +31,6 @@ include('../includes/bdd.php');
                                                 'id_project' => $project_id 
                 ]);
             }
-
-       
-            
-            
        
         // Insert new project into project TABLE
         foreach($_FILES['uploads']['tmp_name'] as $key => $image){
@@ -52,15 +40,11 @@ include('../includes/bdd.php');
             $fileTmpName = $_FILES['uploads']['tmp_name'][$key];
             $fileType = $_FILES['uploads']['type'][$key];
             $fileSize = $_FILES['uploads']['size'][$key];
-
             $acceptable = [
                 'image/jpeg',
                 'image/gif',
-                'image/png',
-                
+                'image/png',    
             ];
-            
-            
 
             if (!in_array($fileType, $acceptable)){
                 echo 'Format incorrecte';
@@ -68,9 +52,7 @@ include('../includes/bdd.php');
             }
             
             //si la taille du fichier est > 2Mo 
-
             $maxSize = 2*1024*1024 ; //1Mo
-
             if($fileSize > $maxSize ) {
                 echo 'Image trop lourde';
             }
@@ -79,9 +61,7 @@ include('../includes/bdd.php');
             $extension = end($array);
             $fileName ='img-' . rand() . '.' . $extension ;
 
-
             //ENREGISTREMENT DE L'IMAGE 
-
             if($namePage){
                 $path = '../images/annexes/' . $namePage . '/' . '';
             }
@@ -95,7 +75,6 @@ include('../includes/bdd.php');
 
             
             // Fetch annexe id
-        
             $q = 'SELECT id FROM annexe WHERE subtitle = ?';
             $statement = $bdd->prepare($q);
 
@@ -106,9 +85,7 @@ include('../includes/bdd.php');
                 $annexeId = implode($result); // Array to string
             }
 
-
             // Insert images
-
             $q = 'INSERT INTO images(name, id_annexe) VALUES(:name, :id_annexe)';
             $statement = $bdd->prepare($q);
             
@@ -119,9 +96,7 @@ include('../includes/bdd.php');
                                                 'id_annexe' => $annexeId
                 ]);
             }
-
-            header('location: ../admin_page.php');
-            
+            header('location: ../admin_page.php');   
         };
       
     }
@@ -130,7 +105,4 @@ include('../includes/bdd.php');
         header('location: ../admin_page?message=Tous les champs ne sont pas remplis&type=error');
         exit;
     }
-        
-    
-
 ?>
