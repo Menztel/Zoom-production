@@ -1,8 +1,6 @@
 <?php
-
     include('../includes/bdd.php');
   
-
     if(isset($_POST['request'])){
         
         $request = $_POST['request'];
@@ -11,24 +9,12 @@
         $req = $bdd->query($q);
         if($req !== false) {
             $projects = $req->fetchALL(PDO::FETCH_ASSOC);
-
-            
+  
             foreach($projects as $project) {
                 
                 //replace all space in the string by ''
                 $newId = str_replace(' ', '', $project['title']);
                 echo '<div id="'. $newId .'" class="'."box-admin" . " " . $project['id'] .'" onclick="fetchIdProject(this.id)">';
-                
-                // Optimisation (Changer le nom des pages pour mettre en minuscule)
-
-                /*$name = ['Photographie', 'Motion design', 'Illustration', "Édition", "Évènementiel"];
-                $src = '';
-                for($i = 0; $i < count($name); $i++){
-                    if($project['page_name'] == $name[$i])
-                    {
-                        $src = 'images/' . strtolower($project['name']) .''
-                    }
-                }*/
                 
                 if($project['page_name'] == 'Photographie')
                 {
@@ -62,12 +48,7 @@
 
                 echo '</div>'; 
             }
-        
-                
-
         }
         else {echo "Erreur de préparation de la requête";}
     }
-        
-
-    ?>
+?>

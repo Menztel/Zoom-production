@@ -1,5 +1,4 @@
 <?php
-
 include('../includes/bdd.php');
 
 if( isset($_GET['id']) ) {
@@ -16,22 +15,17 @@ if( isset($_GET['id']) ) {
         $image = $row['image'];
         $page_name = $row['page_name'];
         
-        if($page_name == "Photographie")
+        if($page_name == "Identité visuelle")
         {
-            $path = "../images/photographie/";
+            $path = "../images/identité_visuelle/";
         }
         if($page_name == "Motion design")
         {
             $path = "../images/motion_design/";
-        }
-        if($page_name == "Illustration")
+        } 
+        if($page_name == "Social media")
         {
-            $path = "../images/illustration/";
-        }   
-        if($page_name == "Édition")
-        {
-           $path = "../images/edition/";
-
+           $path = "../images/social_media/";
         }
         if($page_name == "Évènementiel")
         {
@@ -48,15 +42,12 @@ if( isset($_GET['id']) ) {
         $id_annexe = htmlspecialchars($res_id['id']);
     }
 
-
-
     // Fetch title to get the folder path for annexe images
     $statement_title = $bdd->query("SELECT title FROM project WHERE id = $id_project");
     $res_title = $statement_title->fetch(PDO::FETCH_ASSOC);
     if($res_title) {
         $title = htmlspecialchars($res_title['title']);
     }
-
 
     // Delete images from annexe folder
     $statement_images = $bdd->query("SELECT name FROM images WHERE id_annexe = $id_annexe");
@@ -74,11 +65,9 @@ if( isset($_GET['id']) ) {
         $id_annexe
     ]);
 
-
     // Delete targeted annexe
     $statement_delete_annexe = $bdd->prepare('DELETE FROM annexe WHERE id_project = ?');
     $res_delete_annexe = $statement_delete_annexe->execute([$id_project]);
-
 
     // Delete the targeted project
     $statement_delete_project = $bdd->prepare('DELETE FROM project WHERE id = ?');
@@ -88,8 +77,5 @@ if( isset($_GET['id']) ) {
     if($res_delete_project) {
         unlink($project_image_path);  // delete a file in PHP
     }
-    
-    
 }
-
 ?>
